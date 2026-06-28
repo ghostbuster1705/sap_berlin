@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cornelsen Talent Portal</title>
+    <link rel="preconnect" href="https://sdk.openui5.org">
     <style>
         html, body, #content, [data-sap-ui-component] {
             height: 100%;
@@ -11,13 +12,15 @@
             padding: 0;
         }
     </style>
+    <!-- UI5 von SAP CDN (schneller in BAS). App-Code lokal via ui5 serve. -->
     <script
         id="sap-ui-bootstrap"
-        src="resources/sap-ui-core.js"
-        data-sap-ui-theme="base"
-        data-sap-ui-libs="sap.m,sap.ui.core,sap.ui.layout,sap.uxap,sap.ui.unified"
+        src="https://sdk.openui5.org/1.120.0/resources/sap-ui-core.js"
+        data-sap-ui-theme="sap_horizon"
+        data-sap-ui-libs="sap.m,sap.ui.core,sap.ui.layout"
         data-sap-ui-compatVersion="edge"
         data-sap-ui-async="true"
+        data-sap-ui-preload="async"
         data-sap-ui-resourceroots='{"cornelsen.talent.portal": "./"}'
         data-sap-ui-oninit="module:sap/ui/core/ComponentSupport"
         data-sap-ui-frameOptions="allow">

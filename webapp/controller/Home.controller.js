@@ -1,25 +1,26 @@
 sap.ui.define([
     "sap/ui/core/mvc/Controller",
-    "sap/ui/core/UIComponent",
-    "sap/m/MessageToast"
-], function (Controller, UIComponent, MessageToast) {
+    "sap/ui/model/json/JSONModel"
+], function (Controller, JSONModel) {
     "use strict";
 
     return Controller.extend("cornelsen.talent.portal.controller.Home", {
+        onInit: function () {
+            var oModel = new JSONModel();
+            oModel.loadData("model/mockdata/Dashboard.json");
+            this.getOwnerComponent().setModel(oModel, "dashboard");
+        },
+
         onNavWorklist: function () {
-            UIComponent.getRouterFor(this).navTo("worklist");
+            this.getOwnerComponent().getRouter().navTo("worklist");
         },
 
         onNavAnalytics: function () {
-            UIComponent.getRouterFor(this).navTo("analytics");
+            this.getOwnerComponent().getRouter().navTo("analytics");
         },
 
         onEmployeePress: function () {
-            UIComponent.getRouterFor(this).navTo("worklist");
-        },
-
-        onNewsPress: function () {
-            MessageToast.show("Artikel wird geöffnet...");
+            this.getOwnerComponent().getRouter().navTo("worklist");
         }
     });
 });

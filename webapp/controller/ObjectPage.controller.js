@@ -15,27 +15,32 @@ sap.ui.define([
 
         _onObjectMatched: function (oEvent) {
             var sEmployeeId = oEvent.getParameter("arguments").employeeId;
-            var oModel = this.getView().getModel();
-            var aEmployees = oModel.getProperty("/Employees");
-            var oEmployee = aEmployees.find(function (e) {
-                return e.ID === sEmployeeId;
-            });
+            var oComponent = this.getOwnerComponent();
+            var oEmployeesModel = oComponent.getModel();
 
-            if (!oEmployee) {
-                MessageBox.error("Mitarbeiter nicht gefunden.", {
-                    onClose: function () {
-                        UIComponent.getRouterFor(this).navTo("worklist");
-                    }.bind(this)
+            var fnShow = function () {
+                var aEmployees = oEmployeesModel.getProperty("/Employees") || [];
+                var oEmployee = aEmployees.find(function (e) { return e.ID === sEmployeeId; });
+                if (!oEmployee) {
+                    MessageBox.error("Mitarbeiter nicht gefunden.");
+                    return;
+                }
+                this.getView().setModel(new JSONModel(oEmployee));
+            }.bind(this);
+
+            if (oEmployeesModel && oEmployeesModel.getProperty("/Employees")) {
+                fnShow();
+            } else {
+                oEmployeesModel = new JSONModel();
+                oEmployeesModel.loadData("model/mockdata/Employees.json", null, false, "GET", false, false, function () {
+                    oComponent.setModel(oEmployeesModel);
+                    fnShow();
                 });
-                return;
             }
-
-            var oEmployeeModel = new JSONModel(oEmployee);
-            this.getView().setModel(oEmployeeModel);
         },
 
         onNavBack: function () {
-            UIComponent.getRouterFor(this).navTo("worklist");
+            this.getOwnerComponent().getRouter().navTo("worklist");
         },
 
         onSendEmail: function () {

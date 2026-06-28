@@ -12,14 +12,6 @@
     },
     "sap.ui": {
         "technology": "UI5",
-        "icons": {
-            "icon": "sap-icon://employee",
-            "favIcon": "",
-            "phone": "",
-            "phone@2": "",
-            "tablet": "",
-            "tablet@2": ""
-        },
         "deviceTypes": {
             "desktop": true,
             "tablet": true,
@@ -39,8 +31,7 @@
                 "sap.m": {},
                 "sap.ui.core": {},
                 "sap.ui.layout": {},
-                "sap.uxap": {},
-                "sap.ui.unified": {}
+                "sap.uxap": { "lazy": true }
             }
         },
         "contentDensities": {
@@ -55,14 +46,6 @@
                     "supportedLocales": [""],
                     "fallbackLocale": ""
                 }
-            },
-            "": {
-                "type": "sap.ui.model.json.JSONModel",
-                "uri": "model/mockdata/Employees.json"
-            },
-            "dashboard": {
-                "type": "sap.ui.model.json.JSONModel",
-                "uri": "model/mockdata/Dashboard.json"
             }
         },
         "routing": {
@@ -71,29 +54,14 @@
                 "viewType": "XML",
                 "viewPath": "cornelsen.talent.portal.view",
                 "controlId": "app",
-                "controlAggregation": "pages"
+                "controlAggregation": "pages",
+                "async": true
             },
             "routes": [
-                {
-                    "pattern": "",
-                    "name": "home",
-                    "target": "home"
-                },
-                {
-                    "pattern": "worklist",
-                    "name": "worklist",
-                    "target": "worklist"
-                },
-                {
-                    "pattern": "employee/{employeeId}",
-                    "name": "object",
-                    "target": "object"
-                },
-                {
-                    "pattern": "analytics",
-                    "name": "analytics",
-                    "target": "analytics"
-                }
+                { "pattern": "", "name": "home", "target": "home" },
+                { "pattern": "worklist", "name": "worklist", "target": "worklist" },
+                { "pattern": "employee/{employeeId}", "name": "object", "target": "object" },
+                { "pattern": "analytics", "name": "analytics", "target": "analytics" }
             ],
             "targets": {
                 "home": {
@@ -102,24 +70,23 @@
                 },
                 "worklist": {
                     "viewName": "Worklist",
-                    "viewLevel": 2
+                    "viewLevel": 2,
+                    "lazy": true
                 },
                 "object": {
                     "viewName": "ObjectPage",
-                    "viewLevel": 3
+                    "viewLevel": 3,
+                    "lazy": true
                 },
                 "analytics": {
                     "viewName": "Analytics",
-                    "viewLevel": 2
+                    "viewLevel": 2,
+                    "lazy": true
                 }
             }
         },
         "resources": {
-            "css": [
-                {
-                    "uri": "css/style.css"
-                }
-            ]
+            "css": [{ "uri": "css/style.css" }]
         }
     }
 }

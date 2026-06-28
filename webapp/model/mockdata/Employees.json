@@ -19,7 +19,7 @@
             "ManagerID": "E005",
             "CostCenter": "CC-4100",
             "EmployeeGroup": "Management",
-            "Avatar": "https://randomuser.me/api/portraits/women/44.jpg",
+            "Avatar": "",
             "Initials": "AM",
             "Bio": "Leitet die strategische Entwicklung digitaler Lernplattformen für den Sekundarbereich. Über 12 Jahre Erfahrung im EdTech-Bereich.",
             "Skills": [
@@ -80,7 +80,7 @@
             "ManagerID": "E001",
             "CostCenter": "CC-4200",
             "EmployeeGroup": "Specialist",
-            "Avatar": "https://randomuser.me/api/portraits/men/32.jpg",
+            "Avatar": "",
             "Initials": "MS",
             "Bio": "Verantwortlich für das Design-System und die User Experience aller Cornelsen Digital-Produkte.",
             "Skills": [
@@ -135,7 +135,7 @@
             "ManagerID": "E005",
             "CostCenter": "CC-5100",
             "EmployeeGroup": "Developer",
-            "Avatar": "https://randomuser.me/api/portraits/women/68.jpg",
+            "Avatar": "",
             "Initials": "SF",
             "Bio": "Full-Stack-Entwicklerin mit Schwerpunkt auf SAP BTP, CAP und Fiori Elements.",
             "Skills": [
@@ -186,7 +186,7 @@
             "ManagerID": "E006",
             "CostCenter": "CC-3100",
             "EmployeeGroup": "Editorial",
-            "Avatar": "https://randomuser.me/api/portraits/men/75.jpg",
+            "Avatar": "",
             "Initials": "JW",
             "Bio": "Entwickelt Content-Strategien für digitale und gedruckte Bildungsmedien im Bereich Geisteswissenschaften.",
             "Skills": [
@@ -233,7 +233,7 @@
             "ManagerID": "",
             "CostCenter": "CC-1000",
             "EmployeeGroup": "Executive",
-            "Avatar": "https://randomuser.me/api/portraits/men/52.jpg",
+            "Avatar": "",
             "Initials": "TW",
             "Bio": "Verantwortlich für die digitale Transformation und SAP-Landschaft bei Cornelsen.",
             "Skills": [
@@ -285,7 +285,7 @@
             "ManagerID": "",
             "CostCenter": "CC-3000",
             "EmployeeGroup": "Management",
-            "Avatar": "https://randomuser.me/api/portraits/women/33.jpg",
+            "Avatar": "",
             "Initials": "PK",
             "Bio": "Leitet die redaktionelle Gesamtverantwortung für alle Fachbereiche.",
             "Skills": [

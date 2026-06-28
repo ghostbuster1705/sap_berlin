@@ -96,7 +96,7 @@
                         </headerToolbar>
                         <content>
                             <List items="{dashboard>/RecentHires}">
-                                <StandardListItem title="{dashboard>Name}" description="{dashboard>Department}" info="{dashboard>Date}" icon="{dashboard>Avatar}" type="Active" press=".onEmployeePress"/>
+                                <StandardListItem title="{dashboard>Name}" description="{dashboard>Department}" info="{dashboard>Date}" icon="sap-icon://employee" type="Active" press=".onEmployeePress"/>
                             </List>
                         </content>
                     </Panel>
