@@ -13,7 +13,7 @@
                     <core:Icon src="sap-icon://education" size="1.5rem" color="#ffffff" class="sapUiTinyMarginEnd"/>
                     <VBox>
                         <Title text="Cornelsen Talent Portal" level="H4"/>
-                        <Text text="v3.4 · SAP Fiori" class="cornelsenBrandSubtitle"/>
+                        <Text text="v3.5 · SAP Fiori" class="cornelsenBrandSubtitle"/>
                     </VBox>
                 </HBox>
             </contentLeft>

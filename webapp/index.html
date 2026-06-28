@@ -11,16 +11,35 @@
             padding: 0;
         }
     </style>
-    <script
-        id="sap-ui-bootstrap"
-        src="resources/sap-ui-core.js"
-        data-sap-ui-theme="base"
-        data-sap-ui-libs="sap.m,sap.ui.core,sap.ui.layout"
-        data-sap-ui-compatVersion="edge"
-        data-sap-ui-async="true"
-        data-sap-ui-resourceroots='{"cornelsen.talent.portal": "./"}'
-        data-sap-ui-oninit="module:sap/ui/core/ComponentSupport"
-        data-sap-ui-frameOptions="allow">
+    <script>
+        (function () {
+            var h = window.location.hostname;
+            var isGitHubPages = h.indexOf("github.io") !== -1;
+            var isLocalDev = h === "localhost" || h.indexOf("applicationstudio") !== -1;
+
+            var sUi5 = isLocalDev
+                ? "resources/sap-ui-core.js"
+                : "https://sdk.openui5.org/1.120.0/resources/sap-ui-core.js";
+            var sTheme = isLocalDev ? "base" : "sap_horizon";
+            var sRoot = isGitHubPages ? "/sap_berlin/" : "./";
+            var sLibs = isLocalDev
+                ? "sap.m,sap.ui.core,sap.ui.layout"
+                : "sap.m,sap.ui.core,sap.ui.layout,sap.uxap";
+
+            var oScript = document.createElement("script");
+            oScript.id = "sap-ui-bootstrap";
+            oScript.src = sUi5;
+            oScript.setAttribute("data-sap-ui-theme", sTheme);
+            oScript.setAttribute("data-sap-ui-libs", sLibs);
+            oScript.setAttribute("data-sap-ui-compatVersion", "edge");
+            oScript.setAttribute("data-sap-ui-async", "true");
+            oScript.setAttribute("data-sap-ui-resourceroots", JSON.stringify({
+                "cornelsen.talent.portal": sRoot
+            }));
+            oScript.setAttribute("data-sap-ui-oninit", "module:sap/ui/core/ComponentSupport");
+            oScript.setAttribute("data-sap-ui-frameOptions", "allow");
+            document.head.appendChild(oScript);
+        })();
     </script>
 </head>
 <body class="sapUiBody" id="content">

@@ -5,7 +5,8 @@
   "scripts": {
     "start": "ui5 serve --port 8080 --accept-remote-connections --open index.html",
     "start:bas": "ui5 serve --port 8080 --accept-remote-connections",
-    "build": "ui5 build --all"
+    "build": "ui5 build --clean-dest && cp dist/index.html dist/404.html",
+    "predeploy": "npm run build"
   },
   "devDependencies": {
     "@ui5/cli": "^3.9.0"

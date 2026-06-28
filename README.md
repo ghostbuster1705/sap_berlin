@@ -25,6 +25,17 @@ npm start
 
 Open [http://localhost:8080/index.html](http://localhost:8080/index.html)
 
+## Public URL (GitHub Pages)
+
+После включения Pages приложение доступно **откуда угодно**, без запущенного сервера:
+
+**https://ghostbuster1705.github.io/sap_berlin/**
+
+Один раз в репозитории: **Settings → Pages → Build and deployment → Source: GitHub Actions**.
+
+Деплой запускается автоматически при push в `main` или `cursor/sap-cornelsen-app-6777`.  
+Локально и в BAS по-прежнему используется `npm start` / `npm run start:bas`.
+
 ## SAP Business Application Studio (BAS)
 
 ```bash
