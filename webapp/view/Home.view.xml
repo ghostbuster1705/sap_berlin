@@ -16,67 +16,67 @@
             <!-- KPI Cards -->
             <layout:Grid defaultSpan="L3 M6 S12" class="sapUiSmallMarginBottom">
                 <layout:content>
-                    <f:Card class="cornelsenKpiCard {dashboard>KPIs/0/color} sapUiTinyMarginBottom">
+                    <f:Card class="cornelsenKpiCard cornelsenKpiBlue sapUiTinyMarginBottom">
                         <f:content>
                             <VBox class="sapUiSmallMargin" justifyContent="SpaceBetween" height="100px">
                                 <HBox justifyContent="SpaceBetween" alignItems="Start">
                                     <VBox>
-                                        <Text text="{dashboard>KPIs/0/title}" class="sapUiTinyMarginBottom"/>
-                                        <Text text="{dashboard>KPIs/0/value}" class="cornelsenKpiValue"/>
+                                        <Text text="{dashboard>/KPIs/0/title}" class="sapUiTinyMarginBottom"/>
+                                        <Text text="{dashboard>/KPIs/0/value}" class="cornelsenKpiValue"/>
                                     </VBox>
                                     <VBox class="cornelsenKpiIconWrap" justifyContent="Center" alignItems="Center">
-                                        <core:Icon src="{dashboard>KPIs/0/icon}" size="1.5rem"/>
+                                        <core:Icon src="{dashboard>/KPIs/0/icon}" size="1.5rem"/>
                                     </VBox>
                                 </HBox>
-                                <ObjectStatus text="{dashboard>KPIs/0/trend}" state="{dashboard>KPIs/0/trendState}" class="cornelsenKpiTrend"/>
+                                <ObjectStatus text="{dashboard>/KPIs/0/trend}" state="{dashboard>/KPIs/0/trendState}" class="cornelsenKpiTrend"/>
                             </VBox>
                         </f:content>
                     </f:Card>
-                    <f:Card class="cornelsenKpiCard {dashboard>KPIs/1/color} sapUiTinyMarginBottom">
+                    <f:Card class="cornelsenKpiCard cornelsenKpiTeal sapUiTinyMarginBottom">
                         <f:content>
                             <VBox class="sapUiSmallMargin" justifyContent="SpaceBetween" height="100px">
                                 <HBox justifyContent="SpaceBetween" alignItems="Start">
                                     <VBox>
-                                        <Text text="{dashboard>KPIs/1/title}" class="sapUiTinyMarginBottom"/>
-                                        <Text text="{dashboard>KPIs/1/value}" class="cornelsenKpiValue"/>
+                                        <Text text="{dashboard>/KPIs/1/title}" class="sapUiTinyMarginBottom"/>
+                                        <Text text="{dashboard>/KPIs/1/value}" class="cornelsenKpiValue"/>
                                     </VBox>
                                     <VBox class="cornelsenKpiIconWrap" justifyContent="Center" alignItems="Center">
-                                        <core:Icon src="{dashboard>KPIs/1/icon}" size="1.5rem"/>
+                                        <core:Icon src="{dashboard>/KPIs/1/icon}" size="1.5rem"/>
                                     </VBox>
                                 </HBox>
-                                <ObjectStatus text="{dashboard>KPIs/1/trend}" state="{dashboard>KPIs/1/trendState}" class="cornelsenKpiTrend"/>
+                                <ObjectStatus text="{dashboard>/KPIs/1/trend}" state="{dashboard>/KPIs/1/trendState}" class="cornelsenKpiTrend"/>
                             </VBox>
                         </f:content>
                     </f:Card>
-                    <f:Card class="cornelsenKpiCard {dashboard>KPIs/2/color} sapUiTinyMarginBottom">
+                    <f:Card class="cornelsenKpiCard cornelsenKpiOrange sapUiTinyMarginBottom">
                         <f:content>
                             <VBox class="sapUiSmallMargin" justifyContent="SpaceBetween" height="100px">
                                 <HBox justifyContent="SpaceBetween" alignItems="Start">
                                     <VBox>
-                                        <Text text="{dashboard>KPIs/2/title}" class="sapUiTinyMarginBottom"/>
-                                        <Text text="{dashboard>KPIs/2/value}" class="cornelsenKpiValue"/>
+                                        <Text text="{dashboard>/KPIs/2/title}" class="sapUiTinyMarginBottom"/>
+                                        <Text text="{dashboard>/KPIs/2/value}" class="cornelsenKpiValue"/>
                                     </VBox>
                                     <VBox class="cornelsenKpiIconWrap" justifyContent="Center" alignItems="Center">
-                                        <core:Icon src="{dashboard>KPIs/2/icon}" size="1.5rem"/>
+                                        <core:Icon src="{dashboard>/KPIs/2/icon}" size="1.5rem"/>
                                     </VBox>
                                 </HBox>
-                                <ObjectStatus text="{dashboard>KPIs/2/trend}" state="{dashboard>KPIs/2/trendState}" class="cornelsenKpiTrend"/>
+                                <ObjectStatus text="{dashboard>/KPIs/2/trend}" state="{dashboard>/KPIs/2/trendState}" class="cornelsenKpiTrend"/>
                             </VBox>
                         </f:content>
                     </f:Card>
-                    <f:Card class="cornelsenKpiCard {dashboard>KPIs/3/color} sapUiTinyMarginBottom">
+                    <f:Card class="cornelsenKpiCard cornelsenKpiGreen sapUiTinyMarginBottom">
                         <f:content>
                             <VBox class="sapUiSmallMargin" justifyContent="SpaceBetween" height="100px">
                                 <HBox justifyContent="SpaceBetween" alignItems="Start">
                                     <VBox>
-                                        <Text text="{dashboard>KPIs/3/title}" class="sapUiTinyMarginBottom"/>
-                                        <Text text="{dashboard>KPIs/3/value}" class="cornelsenKpiValue"/>
+                                        <Text text="{dashboard>/KPIs/3/title}" class="sapUiTinyMarginBottom"/>
+                                        <Text text="{dashboard>/KPIs/3/value}" class="cornelsenKpiValue"/>
                                     </VBox>
                                     <VBox class="cornelsenKpiIconWrap" justifyContent="Center" alignItems="Center">
-                                        <core:Icon src="{dashboard>KPIs/3/icon}" size="1.5rem"/>
+                                        <core:Icon src="{dashboard>/KPIs/3/icon}" size="1.5rem"/>
                                     </VBox>
                                 </HBox>
-                                <ObjectStatus text="{dashboard>KPIs/3/trend}" state="{dashboard>KPIs/3/trendState}" class="cornelsenKpiTrend"/>
+                                <ObjectStatus text="{dashboard>/KPIs/3/trend}" state="{dashboard>/KPIs/3/trendState}" class="cornelsenKpiTrend"/>
                             </VBox>
                         </f:content>
                     </f:Card>
@@ -148,11 +148,11 @@
                     <f:Card class="cornelsenContentCard sapUiTinyMarginBottom" press=".onNewsPress">
                         <f:content>
                             <VBox>
-                                <Image src="{dashboard>News/0/Image}" width="100%" height="140px" mode="Background"/>
+                                <Image src="{dashboard>/News/0/Image}" width="100%" height="140px" mode="Background"/>
                                 <VBox class="sapUiSmallMargin">
-                                    <Title text="{dashboard>News/0/Title}" level="H4" wrapping="true"/>
-                                    <Text text="{dashboard>News/0/Summary}" class="sapUiTinyMarginTop sapUiTinyMarginBottom"/>
-                                    <Text text="{dashboard>News/0/Date}" class="sapThemeLightText"/>
+                                    <Title text="{dashboard>/News/0/Title}" level="H4" wrapping="true"/>
+                                    <Text text="{dashboard>/News/0/Summary}" class="sapUiTinyMarginTop sapUiTinyMarginBottom"/>
+                                    <Text text="{dashboard>/News/0/Date}" class="sapThemeLightText"/>
                                 </VBox>
                             </VBox>
                         </f:content>
@@ -160,11 +160,11 @@
                     <f:Card class="cornelsenContentCard sapUiTinyMarginBottom">
                         <f:content>
                             <VBox>
-                                <Image src="{dashboard>News/1/Image}" width="100%" height="140px" mode="Background"/>
+                                <Image src="{dashboard>/News/1/Image}" width="100%" height="140px" mode="Background"/>
                                 <VBox class="sapUiSmallMargin">
-                                    <Title text="{dashboard>News/1/Title}" level="H4" wrapping="true"/>
-                                    <Text text="{dashboard>News/1/Summary}" class="sapUiTinyMarginTop sapUiTinyMarginBottom"/>
-                                    <Text text="{dashboard>News/1/Date}" class="sapThemeLightText"/>
+                                    <Title text="{dashboard>/News/1/Title}" level="H4" wrapping="true"/>
+                                    <Text text="{dashboard>/News/1/Summary}" class="sapUiTinyMarginTop sapUiTinyMarginBottom"/>
+                                    <Text text="{dashboard>/News/1/Date}" class="sapThemeLightText"/>
                                 </VBox>
                             </VBox>
                         </f:content>

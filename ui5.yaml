@@ -12,6 +12,7 @@ framework:
     - name: sap.uxap
     - name: sap.f
     - name: sap.ui.unified
+    - name: sap.tnt
 server:
   settings:
     httpPort: 8080
