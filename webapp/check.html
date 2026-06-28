@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html><head><title>UI5 Check</title></head>
+<body style="font-family:Arial;padding:30px">
+<h2>UI5 Diagnose</h2>
+<div id="log">Prüfe...</div>
+<script>
+var log = document.getElementById("log");
+function add(msg, ok) {
+    log.innerHTML += "<p style='color:" + (ok ? "green" : "red") + "'>" + msg + "</p>";
+}
+// 1. UI5 core
+var s = document.createElement("script");
+s.src = "resources/sap-ui-core.js";
+s.onload = function() {
+    add("✅ sap-ui-core.js geladen", true);
+    sap.ui.getCore().attachInit(function() {
+        add("✅ UI5 Core initialisiert", true);
+        sap.ui.require(["sap/m/Button"], function(Button) {
+            new Button({text: "UI5 funktioniert!", type: "Emphasized"}).placeAt("log");
+            add("✅ sap.m.Button erstellt — UI5 OK!", true);
+            add("→ Öffnen Sie <a href='index.html'>index.html</a>", true);
+        });
+    });
+};
+s.onerror = function() {
+    add("❌ sap-ui-core.js nicht gefunden — npm run start:bas ausführen!", false);
+};
+document.head.appendChild(s);
+</script>
+</body></html>
