@@ -30,7 +30,7 @@
         "rootView": {
             "viewName": "cornelsen.talent.portal.view.App",
             "type": "XML",
-            "async": true,
+            "async": false,
             "id": "appView"
         },
         "dependencies": {
@@ -58,13 +58,11 @@
             },
             "": {
                 "type": "sap.ui.model.json.JSONModel",
-                "uri": "model/mockdata/Employees.json",
-                "preload": true
+                "uri": "model/mockdata/Employees.json"
             },
             "dashboard": {
                 "type": "sap.ui.model.json.JSONModel",
-                "uri": "model/mockdata/Dashboard.json",
-                "preload": true
+                "uri": "model/mockdata/Dashboard.json"
             }
         },
         "routing": {
@@ -73,8 +71,7 @@
                 "viewType": "XML",
                 "viewPath": "cornelsen.talent.portal.view",
                 "controlId": "app",
-                "controlAggregation": "pages",
-                "async": true
+                "controlAggregation": "pages"
             },
             "routes": [
                 {

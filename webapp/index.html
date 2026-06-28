@@ -4,33 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cornelsen Talent Portal</title>
-    <meta name="app-version" content="2.0.0-bas">
     <style>
-        html, body, #content, #content > div {
-            height: 100%;
-            margin: 0;
-            padding: 0;
+        html, body { height: 100%; margin: 0; padding: 0; }
+        #bootStatus {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 99999;
+            padding: 12px 20px; font-family: Arial, sans-serif; font-size: 14px;
+            background: #003366; color: #fff;
         }
+        #bootError {
+            display: none; position: fixed; top: 48px; left: 0; right: 0; z-index: 99998;
+            padding: 16px 20px; font-family: monospace; font-size: 13px;
+            background: #fff0f0; color: #c00; border-bottom: 2px solid #c00;
+            white-space: pre-wrap; max-height: 40vh; overflow: auto;
+        }
+        #appContainer { height: 100%; width: 100%; }
     </style>
+</head>
+<body class="sapUiBody">
+    <div id="bootStatus">⏳ Cornelsen Talent Portal v3.0 wird geladen...</div>
+    <div id="bootError"></div>
+    <div id="appContainer"></div>
+
     <script
         id="sap-ui-bootstrap"
-        src="https://sdk.openui5.org/1.120.0/resources/sap-ui-core.js"
-        data-sap-ui-theme="sap_horizon"
+        src="resources/sap-ui-core.js"
+        data-sap-ui-theme="sap_belize"
         data-sap-ui-libs="sap.m,sap.ui.core,sap.ui.layout,sap.uxap,sap.ui.unified"
         data-sap-ui-compatVersion="edge"
         data-sap-ui-async="true"
         data-sap-ui-resourceroots='{"cornelsen.talent.portal": "./"}'
-        data-sap-ui-oninit="module:sap/ui/core/ComponentSupport"
+        data-sap-ui-oninit="module:cornelsen/talent/portal/init"
         data-sap-ui-frameOptions="allow">
     </script>
-</head>
-<body class="sapUiBody cornelsenBody" id="content">
-    <div
-        data-sap-ui-component
-        data-name="cornelsen.talent.portal"
-        data-id="container"
-        data-settings='{"id": "cornelsenTalentPortal"}'
-        style="height: 100%">
-    </div>
 </body>
 </html>

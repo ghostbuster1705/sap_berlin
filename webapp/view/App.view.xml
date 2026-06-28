@@ -5,66 +5,43 @@
     xmlns:core="sap.ui.core"
     displayBlock="true"
     height="100%">
-    <VBox height="100%" fitContainer="true" class="cornelsenShell">
-        <Bar class="cornelsenShellBar cornelsenShell">
+    <VBox height="100%" width="100%" renderType="Bare" class="cornelsenShell">
+        <Bar class="cornelsenShellBar">
             <contentLeft>
-                <Button
-                    id="sideNavToggle"
-                    icon="sap-icon://menu2"
-                    type="Transparent"
-                    press=".onSideNavButtonPress"
-                    tooltip="Navigation"/>
+                <Button id="sideNavToggle" icon="sap-icon://menu2" type="Transparent" press=".onSideNavButtonPress"/>
                 <HBox alignItems="Center" class="sapUiSmallMarginBegin">
                     <core:Icon src="sap-icon://education" size="1.5rem" color="#ffffff" class="sapUiTinyMarginEnd"/>
                     <VBox>
-                            <Title text="Cornelsen Talent Portal" level="H4"/>
-                            <Text text="v2.0 · SAP Fiori" class="cornelsenBrandSubtitle"/>
+                        <Title text="Cornelsen Talent Portal" level="H4"/>
+                        <Text text="v3.0 · SAP Fiori" class="cornelsenBrandSubtitle"/>
                     </VBox>
                 </HBox>
             </contentLeft>
             <contentMiddle>
-                <SearchField
-                    id="globalSearch"
-                    width="100%"
-                    placeholder="Mitarbeiter, Projekte suchen..."
-                    search=".onGlobalSearch"
-                    class="sapUiMediumMarginBeginEnd"/>
+                <SearchField id="globalSearch" width="100%" placeholder="Suchen..." search=".onGlobalSearch"/>
             </contentMiddle>
             <contentRight>
-                <Button icon="sap-icon://bell" type="Transparent" tooltip="Benachrichtigungen (3)"/>
-                <Button icon="sap-icon://question-mark" type="Transparent" tooltip="Hilfe"/>
-                <Avatar
-                    displaySize="XS"
-                    initials="AM"
-                    class="sapUiSmallMarginBegin"
-                    press=".onAvatarPress"/>
+                <Button icon="sap-icon://bell" type="Transparent"/>
+                <Avatar displaySize="XS" initials="AM" class="sapUiSmallMarginBegin" press=".onAvatarPress"/>
             </contentRight>
         </Bar>
-        <HBox height="100%" fitContainer="true">
-            <VBox id="sideNavPanel" width="240px" class="cornelsenSideNav">
+        <HBox height="100%" width="100%" renderType="Bare" class="cornelsenMainRow">
+            <VBox id="sideNavPanel" width="220px" class="cornelsenSideNav">
                 <List id="sideNavigation" mode="SingleSelectMaster" selectionChange=".onNavSelect" includeItemInSelection="true">
                     <items>
-                        <StandardListItem title="{i18n>navHome}" icon="sap-icon://home" type="Active">
-                            <customData>
-                                <core:CustomData key="navKey" value="home"/>
-                            </customData>
+                        <StandardListItem title="Startseite" icon="sap-icon://home" type="Active">
+                            <customData><core:CustomData key="navKey" value="home"/></customData>
                         </StandardListItem>
-                        <StandardListItem title="{i18n>navWorklist}" icon="sap-icon://employee" type="Active">
-                            <customData>
-                                <core:CustomData key="navKey" value="worklist"/>
-                            </customData>
+                        <StandardListItem title="Mitarbeiter" icon="sap-icon://employee" type="Active">
+                            <customData><core:CustomData key="navKey" value="worklist"/></customData>
                         </StandardListItem>
-                        <StandardListItem title="{i18n>navAnalytics}" icon="sap-icon://bar-chart" type="Active">
-                            <customData>
-                                <core:CustomData key="navKey" value="analytics"/>
-                            </customData>
+                        <StandardListItem title="Analytik" icon="sap-icon://bar-chart" type="Active">
+                            <customData><core:CustomData key="navKey" value="analytics"/></customData>
                         </StandardListItem>
                     </items>
                 </List>
             </VBox>
-            <VBox height="100%" width="100%" class="cornelsenMainArea">
-                <App id="app" busy="{app>/busy}" class="cornelsenPageContent"/>
-            </VBox>
+            <App id="app" height="100%" width="100%" class="cornelsenPageContent"/>
         </HBox>
     </VBox>
 </mvc:View>

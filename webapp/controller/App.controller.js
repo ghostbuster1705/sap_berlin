@@ -1,52 +1,34 @@
 sap.ui.define([
-    "sap/ui/core/mvc/Controller",
-    "sap/ui/core/UIComponent",
-    "sap/m/MessageToast"
-], function (Controller, UIComponent, MessageToast) {
+    "sap/ui/core/mvc/Controller"
+], function (Controller) {
     "use strict";
 
     return Controller.extend("cornelsen.talent.portal.controller.App", {
         onInit: function () {
-            this._oRouter = UIComponent.getRouterFor(this);
+            this._oRouter = this.getOwnerComponent().getRouter();
             this._oRouter.attachRouteMatched(this._onRouteMatched, this);
         },
 
         _onRouteMatched: function (oEvent) {
             var sRouteName = oEvent.getParameter("name");
-            var mRouteKeys = {
-                home: 0,
-                worklist: 1,
-                object: 1,
-                analytics: 2
-            };
+            var mRouteKeys = { home: 0, worklist: 1, object: 1, analytics: 2 };
             var iIndex = mRouteKeys[sRouteName];
-            if (iIndex !== undefined) {
-                this.byId("sideNavigation").setSelectedItem(
-                    this.byId("sideNavigation").getItems()[iIndex]
-                );
-            }
-
-            if (sap.ui.Device.system.phone) {
-                this.byId("sideNavPanel").setVisible(false);
+            var oList = this.byId("sideNavigation");
+            if (iIndex !== undefined && oList) {
+                oList.setSelectedItem(oList.getItems()[iIndex]);
             }
         },
 
         onSideNavButtonPress: function () {
             var oPanel = this.byId("sideNavPanel");
-            oPanel.setVisible(!oPanel.getVisible());
+            if (oPanel) { oPanel.setVisible(!oPanel.getVisible()); }
         },
 
         onNavSelect: function (oEvent) {
             var oItem = oEvent.getParameter("listItem");
-            if (!oItem) {
-                return;
-            }
+            if (!oItem) { return; }
+            var mRoutes = { home: "home", worklist: "worklist", analytics: "analytics" };
             var sKey = oItem.data("navKey");
-            var mRoutes = {
-                home: "home",
-                worklist: "worklist",
-                analytics: "analytics"
-            };
             if (mRoutes[sKey]) {
                 this._oRouter.navTo(mRoutes[sKey]);
             }
@@ -54,16 +36,7 @@ sap.ui.define([
 
         onGlobalSearch: function (oEvent) {
             var sQuery = oEvent.getParameter("query");
-            if (sQuery) {
-                this._oRouter.navTo("worklist");
-                setTimeout(function () {
-                    var oTarget = this._oRouter.getTargets().getTarget("worklist");
-                    var oView = oTarget && oTarget._oView;
-                    if (oView && oView.getController().applySearch) {
-                        oView.getController().applySearch(sQuery);
-                    }
-                }.bind(this), 500);
-            }
+            if (sQuery) { this._oRouter.navTo("worklist"); }
         },
 
         onAvatarPress: function () {

@@ -16,6 +16,18 @@
 }
 
 /* Shell Bar Branding */
+.cornelsenShell {
+    height: 100vh !important;
+    display: flex;
+    flex-direction: column;
+}
+
+.cornelsenMainRow {
+    flex: 1;
+    min-height: 0;
+    overflow: hidden;
+}
+
 .cornelsenMainArea {
     overflow: hidden;
     flex: 1;
