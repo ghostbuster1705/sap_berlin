@@ -2,80 +2,69 @@
     controllerName="cornelsen.talent.portal.controller.App"
     xmlns:mvc="sap.ui.core.mvc"
     xmlns="sap.m"
-    xmlns:tnt="sap.tnt"
-    xmlns:f="sap.f"
+    xmlns:core="sap.ui.core"
     displayBlock="true"
     height="100%">
-    <tnt:ToolPage id="toolPage" class="cornelsenToolPage">
-        <tnt:header>
-            <Bar class="cornelsenShellBar">
-                <contentLeft>
-                    <Button
-                        id="sideNavToggle"
-                        icon="sap-icon://menu2"
-                        type="Transparent"
-                        press=".onSideNavButtonPress"
-                        tooltip="Navigation"/>
-                    <HBox alignItems="Center" class="sapUiSmallMarginBegin">
-                        <core:Icon xmlns:core="sap.ui.core" src="sap-icon://education" size="1.5rem" color="#ffffff" class="sapUiTinyMarginEnd"/>
-                        <VBox>
-                            <Title text="Cornelsen Talent Portal" level="H4"/>
-                            <Text text="SAP Fiori · S/4HANA Cloud" class="cornelsenBrandSubtitle"/>
-                        </VBox>
-                    </HBox>
-                </contentLeft>
-                <contentMiddle>
-                    <SearchField
-                        id="globalSearch"
-                        width="100%"
-                        placeholder="Mitarbeiter, Projekte suchen..."
-                        search=".onGlobalSearch"
-                        class="sapUiMediumMarginBeginEnd"/>
-                </contentMiddle>
-                <contentRight>
-                    <Button icon="sap-icon://bell" type="Transparent" tooltip="Benachrichtigungen (3)"/>
-                    <Button icon="sap-icon://question-mark" type="Transparent" tooltip="Hilfe"/>
-                    <Avatar
-                        src="https://randomuser.me/api/portraits/women/44.jpg"
-                        displaySize="XS"
-                        class="sapUiSmallMarginBegin"
-                        press=".onAvatarPress"/>
-                </contentRight>
-            </Bar>
-        </tnt:header>
-        <tnt:sideContent>
-            <tnt:SideNavigation
-                id="sideNavigation"
-                selectedKey="{app>/selectedKey}"
-                itemSelect=".onItemSelect"
-                class="cornelsenSideNav"
-                expanded="true">
-                <tnt:NavigationList>
-                    <tnt:NavigationListItem
-                        text="{i18n>navHome}"
-                        icon="sap-icon://home"
-                        key="home"/>
-                    <tnt:NavigationListItem
-                        text="{i18n>navWorklist}"
-                        icon="sap-icon://employee"
-                        key="worklist"/>
-                    <tnt:NavigationListItem
-                        text="{i18n>navAnalytics}"
-                        icon="sap-icon://bar-chart"
-                        key="analytics"/>
-                </tnt:NavigationList>
-                <tnt:fixedItem>
-                    <tnt:NavigationList>
-                        <tnt:NavigationListItem
-                            text="{i18n>navSettings}"
-                            icon="sap-icon://action-settings"
-                            key="settings"/>
-                    </tnt:NavigationList>
-                </tnt:fixedItem>
-            </tnt:SideNavigation>
-        </tnt:sideContent>
-        <tnt:mainContent>
-            <App id="app" busy="{app>/busy}" class="cornelsenPageContent"/>
-        </tnt:mainContent>
-    </tnt:ToolPage>
+    <VBox height="100%" fitContainer="true" class="cornelsenShell">
+        <Bar class="cornelsenShellBar cornelsenShell">
+            <contentLeft>
+                <Button
+                    id="sideNavToggle"
+                    icon="sap-icon://menu2"
+                    type="Transparent"
+                    press=".onSideNavButtonPress"
+                    tooltip="Navigation"/>
+                <HBox alignItems="Center" class="sapUiSmallMarginBegin">
+                    <core:Icon src="sap-icon://education" size="1.5rem" color="#ffffff" class="sapUiTinyMarginEnd"/>
+                    <VBox>
+                        <Title text="Cornelsen Talent Portal" level="H4"/>
+                        <Text text="SAP Fiori · S/4HANA Cloud" class="cornelsenBrandSubtitle"/>
+                    </VBox>
+                </HBox>
+            </contentLeft>
+            <contentMiddle>
+                <SearchField
+                    id="globalSearch"
+                    width="100%"
+                    placeholder="Mitarbeiter, Projekte suchen..."
+                    search=".onGlobalSearch"
+                    class="sapUiMediumMarginBeginEnd"/>
+            </contentMiddle>
+            <contentRight>
+                <Button icon="sap-icon://bell" type="Transparent" tooltip="Benachrichtigungen (3)"/>
+                <Button icon="sap-icon://question-mark" type="Transparent" tooltip="Hilfe"/>
+                <Avatar
+                    displaySize="XS"
+                    initials="AM"
+                    class="sapUiSmallMarginBegin"
+                    press=".onAvatarPress"/>
+            </contentRight>
+        </Bar>
+        <HBox height="100%" fitContainer="true">
+            <VBox id="sideNavPanel" width="240px" class="cornelsenSideNav">
+                <List id="sideNavigation" mode="SingleSelectMaster" selectionChange=".onNavSelect" includeItemInSelection="true">
+                    <items>
+                        <StandardListItem title="{i18n>navHome}" icon="sap-icon://home" type="Active">
+                            <customData>
+                                <core:CustomData key="navKey" value="home"/>
+                            </customData>
+                        </StandardListItem>
+                        <StandardListItem title="{i18n>navWorklist}" icon="sap-icon://employee" type="Active">
+                            <customData>
+                                <core:CustomData key="navKey" value="worklist"/>
+                            </customData>
+                        </StandardListItem>
+                        <StandardListItem title="{i18n>navAnalytics}" icon="sap-icon://bar-chart" type="Active">
+                            <customData>
+                                <core:CustomData key="navKey" value="analytics"/>
+                            </customData>
+                        </StandardListItem>
+                    </items>
+                </List>
+            </VBox>
+            <VBox height="100%" width="100%" class="cornelsenMainArea">
+                <App id="app" busy="{app>/busy}" class="cornelsenPageContent"/>
+            </VBox>
+        </HBox>
+    </VBox>
 </mvc:View>

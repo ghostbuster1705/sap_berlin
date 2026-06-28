@@ -16,7 +16,12 @@
 }
 
 /* Shell Bar Branding */
-.cornelsenShellBar .sapMBar {
+.cornelsenMainArea {
+    overflow: hidden;
+    flex: 1;
+}
+
+.cornelsenShell .sapMBar {
     background: linear-gradient(135deg, var(--cornelsen-secondary) 0%, #004080 100%) !important;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }

@@ -14,27 +14,34 @@ sap.ui.define([
         _onRouteMatched: function (oEvent) {
             var sRouteName = oEvent.getParameter("name");
             var mRouteKeys = {
-                home: "home",
-                worklist: "worklist",
-                object: "worklist",
-                analytics: "analytics"
+                home: 0,
+                worklist: 1,
+                object: 1,
+                analytics: 2
             };
-            var sKey = mRouteKeys[sRouteName] || "home";
-            this.getView().getModel("app").setProperty("/selectedKey", sKey);
+            var iIndex = mRouteKeys[sRouteName];
+            if (iIndex !== undefined) {
+                this.byId("sideNavigation").setSelectedItem(
+                    this.byId("sideNavigation").getItems()[iIndex]
+                );
+            }
 
-            var oToolPage = this.byId("toolPage");
-            if (oToolPage && sap.ui.Device.system.phone) {
-                oToolPage.setSideExpanded(false);
+            if (sap.ui.Device.system.phone) {
+                this.byId("sideNavPanel").setVisible(false);
             }
         },
 
         onSideNavButtonPress: function () {
-            var oToolPage = this.byId("toolPage");
-            oToolPage.setSideExpanded(!oToolPage.getSideExpanded());
+            var oPanel = this.byId("sideNavPanel");
+            oPanel.setVisible(!oPanel.getVisible());
         },
 
-        onItemSelect: function (oEvent) {
-            var sKey = oEvent.getParameter("item").getKey();
+        onNavSelect: function (oEvent) {
+            var oItem = oEvent.getParameter("listItem");
+            if (!oItem) {
+                return;
+            }
+            var sKey = oItem.data("navKey");
             var mRoutes = {
                 home: "home",
                 worklist: "worklist",
@@ -42,8 +49,6 @@ sap.ui.define([
             };
             if (mRoutes[sKey]) {
                 this._oRouter.navTo(mRoutes[sKey]);
-            } else if (sKey === "settings") {
-                MessageToast.show("Einstellungen werden in Kürze verfügbar sein.");
             }
         },
 
@@ -51,16 +56,13 @@ sap.ui.define([
             var sQuery = oEvent.getParameter("query");
             if (sQuery) {
                 this._oRouter.navTo("worklist");
-                var oWorklistRoute = this._oRouter.getRoute("worklist");
-                oWorklistRoute.attachPatternMatched(function () {
-                    var oView = this._oRouter.getTargets().getTarget("worklist")._oView;
-                    if (oView) {
-                        var oController = oView.getController();
-                        if (oController && oController.applySearch) {
-                            oController.applySearch(sQuery);
-                        }
+                setTimeout(function () {
+                    var oTarget = this._oRouter.getTargets().getTarget("worklist");
+                    var oView = oTarget && oTarget._oView;
+                    if (oView && oView.getController().applySearch) {
+                        oView.getController().applySearch(sQuery);
                     }
-                }.bind(this), true);
+                }.bind(this), 500);
             }
         },
 

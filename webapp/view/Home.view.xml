@@ -87,17 +87,17 @@
             <layout:Grid defaultSpan="L8 M12 S12" class="sapUiSmallMarginBottom">
                 <layout:content>
                     <f:Card class="cornelsenContentCard">
-                        <f:header>
-                            <f:cards:Header xmlns:f.cards="sap.f.cards" title="{i18n>homeQuickActions}" iconSrc="sap-icon://action"/>
-                        </f:header>
                         <f:content>
-                            <HBox class="sapUiSmallMargin" wrap="Wrap">
+                            <VBox>
+                                <Title text="{i18n>homeQuickActions}" level="H5" class="sapUiSmallMargin"/>
+                                <HBox class="sapUiSmallMargin" wrap="Wrap">
                                 <Button text="Mitarbeiter anlegen" icon="sap-icon://add-employee" type="Emphasized" class="cornelsenQuickAction sapUiTinyMarginEnd sapUiTinyMarginBottom" press=".onNavWorklist"/>
                                 <Button text="Urlaubsantrag" icon="sap-icon://calendar" class="cornelsenQuickAction sapUiTinyMarginEnd sapUiTinyMarginBottom"/>
                                 <Button text="Zeiterfassung" icon="sap-icon://time-entry-request" class="cornelsenQuickAction sapUiTinyMarginEnd sapUiTinyMarginBottom"/>
                                 <Button text="Analytik" icon="sap-icon://bar-chart" class="cornelsenQuickAction sapUiTinyMarginEnd sapUiTinyMarginBottom" press=".onNavAnalytics"/>
                                 <Button text="Org-Chart" icon="sap-icon://org-chart" class="cornelsenQuickAction sapUiTinyMarginEnd sapUiTinyMarginBottom"/>
-                            </HBox>
+                                </HBox>
+                            </VBox>
                         </f:content>
                     </f:Card>
                 </layout:content>
@@ -106,10 +106,9 @@
             <layout:Grid defaultSpan="L4 M6 S12" class="sapUiSmallMarginBottom">
                 <layout:content>
                     <f:Card class="cornelsenContentCard sapUiTinyMarginBottom">
-                        <f:header>
-                            <f:cards:Header xmlns:f.cards="sap.f.cards" title="{i18n>homeRecentHires}" iconSrc="sap-icon://employee"/>
-                        </f:header>
                         <f:content>
+                            <VBox>
+                                <Title text="{i18n>homeRecentHires}" level="H5" class="sapUiSmallMargin"/>
                             <List items="{dashboard>/RecentHires}" showSeparators="Inner">
                                 <StandardListItem
                                     title="{dashboard>Name}"
@@ -120,14 +119,14 @@
                                     type="Active"
                                     press=".onEmployeePress"/>
                             </List>
+                            </VBox>
                         </f:content>
                     </f:Card>
 
                     <f:Card class="cornelsenContentCard sapUiTinyMarginBottom">
-                        <f:header>
-                            <f:cards:Header xmlns:f.cards="sap.f.cards" title="{i18n>homeUpcomingEvents}" iconSrc="sap-icon://calendar"/>
-                        </f:header>
                         <f:content>
+                            <VBox>
+                                <Title text="{i18n>homeUpcomingEvents}" level="H5" class="sapUiSmallMargin"/>
                             <List items="{dashboard>/UpcomingEvents}" showSeparators="Inner">
                                 <StandardListItem
                                     title="{dashboard>Title}"
@@ -136,6 +135,7 @@
                                     icon="sap-icon://appointment-2"
                                     type="Inactive"/>
                             </List>
+                            </VBox>
                         </f:content>
                     </f:Card>
                 </layout:content>
