@@ -1,0 +1,117 @@
+<mvc:View
+    controllerName="cornelsen.talent.portal.controller.Worklist"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:f="sap.f">
+    <Page
+        title="{i18n>worklistTitle}"
+        showNavButton="false"
+        class="sapUiResponsiveContentPadding">
+        <subHeader>
+            <Toolbar>
+                <SearchField
+                    id="worklistSearch"
+                    width="30%"
+                    placeholder="{i18n>worklistSearchPlaceholder}"
+                    search=".onSearch"
+                    liveChange=".onSearch"/>
+                <ToolbarSpacer/>
+                <Select
+                    id="departmentFilter"
+                    width="180px"
+                    change=".onFilterChange"
+                    forceSelection="false">
+                    <core:Item key="" text="Alle Abteilungen"/>
+                    <core:Item key="Digital Learning" text="Digital Learning"/>
+                    <core:Item key="Design &amp; Experience" text="Design &amp; Experience"/>
+                    <core:Item key="IT &amp; Digital" text="IT &amp; Digital"/>
+                    <core:Item key="Editorial" text="Editorial"/>
+                    <core:Item key="Executive Board" text="Executive Board"/>
+                </Select>
+                <Select
+                    id="locationFilter"
+                    width="150px"
+                    change=".onFilterChange"
+                    forceSelection="false"
+                    class="sapUiTinyMarginBegin">
+                    <core:Item key="" text="Alle Standorte"/>
+                    <core:Item key="Berlin" text="Berlin"/>
+                    <core:Item key="Hamburg" text="Hamburg"/>
+                    <core:Item key="München" text="München"/>
+                </Select>
+                <Select
+                    id="statusFilter"
+                    width="130px"
+                    change=".onFilterChange"
+                    forceSelection="false"
+                    class="sapUiTinyMarginBegin">
+                    <core:Item key="" text="Alle Status"/>
+                    <core:Item key="Active" text="Aktiv"/>
+                    <core:Item key="On Leave" text="Abwesend"/>
+                </Select>
+            </Toolbar>
+        </subHeader>
+        <content>
+            <VBox class="sapUiSmallMargin">
+                <Text id="worklistCount" text="" class="sapUiTinyMarginBottom sapThemeLightText"/>
+                <Table
+                    id="employeesTable"
+                    items="{
+                        path: '/Employees',
+                        sorter: { path: 'LastName' }
+                    }"
+                    growing="true"
+                    growingThreshold="20"
+                    sticky="ColumnHeaders,HeaderToolbar"
+                    class="cornelsenWorklistTable"
+                    mode="SingleSelectMaster"
+                    itemPress=".onItemPress">
+                    <columns>
+                        <Column width="30%">
+                            <Text text="{i18n>worklistColumnName}"/>
+                        </Column>
+                        <Column width="22%" minScreenWidth="Tablet" demandPopin="true">
+                            <Text text="{i18n>worklistColumnTitle}"/>
+                        </Column>
+                        <Column width="18%" minScreenWidth="Desktop" demandPopin="true">
+                            <Text text="{i18n>worklistColumnDepartment}"/>
+                        </Column>
+                        <Column width="12%" minScreenWidth="Desktop" demandPopin="true">
+                            <Text text="{i18n>worklistColumnLocation}"/>
+                        </Column>
+                        <Column width="10%" hAlign="Center" minScreenWidth="Tablet" demandPopin="true">
+                            <Text text="{i18n>worklistColumnStatus}"/>
+                        </Column>
+                        <Column width="8%" hAlign="End" minScreenWidth="Desktop" demandPopin="true">
+                            <Text text=""/>
+                        </Column>
+                    </columns>
+                    <items>
+                        <ColumnListItem type="Navigation">
+                            <cells>
+                                <HBox alignItems="Center">
+                                    <Avatar
+                                        src="{Avatar}"
+                                        initials="{Initials}"
+                                        displaySize="S"
+                                        class="cornelsenWorklistAvatar"
+                                        backgroundColor="Accent6"/>
+                                    <VBox>
+                                        <Title text="{FullName}" level="H5"/>
+                                        <Text text="{Email}" class="sapThemeLightText"/>
+                                    </VBox>
+                                </HBox>
+                                <Text text="{Title}"/>
+                                <Text text="{Department}"/>
+                                <Text text="{Location}"/>
+                                <ObjectStatus text="{Status}" state="{StatusState}"/>
+                                <Button icon="sap-icon://navigation-right-arrow" type="Transparent"/>
+                            </cells>
+                        </ColumnListItem>
+                    </items>
+                </Table>
+            </VBox>
+        </content>
+    </Page>
+</mvc:View>

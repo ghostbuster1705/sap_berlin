@@ -1,0 +1,12 @@
+{
+  "name": "cornelsen-talent-portal",
+  "version": "1.0.0",
+  "description": "SAP Fiori Talent Portal — Cornelsen-inspired enterprise application",
+  "scripts": {
+    "start": "ui5 serve --open index.html",
+    "build": "ui5 build --all"
+  },
+  "devDependencies": {
+    "@ui5/cli": "^3.9.0"
+  }
+}

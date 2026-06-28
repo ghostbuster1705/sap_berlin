@@ -1,0 +1,355 @@
+<mvc:View
+    controllerName="cornelsen.talent.portal.controller.ObjectPage"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:uxap="sap.uxap"
+    xmlns:layout="sap.ui.layout"
+    xmlns:f="sap.f"
+    height="100%">
+    <uxap:ObjectPageLayout
+        id="objectPage"
+        class="cornelsenObjectPage"
+        showTitleInHeaderContent="true"
+        alwaysShowContentHeader="false"
+        preserveHeaderStateOnScroll="true"
+        headerContentPinnable="true"
+        isChildPage="true"
+        upperCaseAnchorBar="false">
+        <uxap:headerTitle>
+            <uxap:ObjectPageDynamicHeaderTitle>
+                <uxap:expandedHeading>
+                    <Title text="{FullName}" wrapping="true"/>
+                </uxap:expandedHeading>
+                <uxap:snappedHeading>
+                    <HBox alignItems="Center">
+                        <Avatar src="{Avatar}" initials="{Initials}" displaySize="S" class="sapUiTinyMarginEnd"/>
+                        <Title text="{FullName}"/>
+                    </HBox>
+                </uxap:snappedHeading>
+                <uxap:expandedContent>
+                    <Text text="{Title}" class="sapUiTinyMarginTop"/>
+                </uxap:expandedContent>
+                <uxap:snappedContent>
+                    <Text text="{Title}"/>
+                </uxap:snappedContent>
+                <uxap:actions>
+                    <Button text="{i18n>objectEdit}" icon="sap-icon://edit" type="Emphasized"/>
+                    <Button text="{i18n>objectShare}" icon="sap-icon://share-2" type="Transparent"/>
+                    <Button icon="sap-icon://favorite" type="Transparent" tooltip="{i18n>objectFavorite}"/>
+                    <Button icon="sap-icon://overflow" type="Transparent"/>
+                </uxap:actions>
+                <uxap:navigationActions>
+                    <Button
+                        icon="sap-icon://nav-back"
+                        type="Transparent"
+                        press=".onNavBack"
+                        tooltip="{i18n>btnBack}"/>
+                </uxap:navigationActions>
+            </uxap:ObjectPageDynamicHeaderTitle>
+        </uxap:headerTitle>
+        <uxap:headerContent>
+            <HBox class="cornelsenObjectHeader" alignItems="Center" wrap="Wrap">
+                <Avatar
+                    src="{Avatar}"
+                    initials="{Initials}"
+                    displaySize="XL"
+                    class="cornelsenAvatarLarge sapUiMediumMarginEnd"
+                    backgroundColor="Accent6"
+                    badgeIcon="sap-icon://accept"
+                    badgeValue=""/>
+                <VBox class="sapUiMediumMarginEnd">
+                    <HBox wrap="Wrap" class="sapUiTinyMarginBottom">
+                        <VBox class="cornelsenHeaderFacet sapUiTinyMarginEnd sapUiTinyMarginBottom">
+                            <Text text="Status" class="cornelsenHeaderFacetLabel"/>
+                            <ObjectStatus text="{Status}" state="{StatusState}" class="cornelsenHeaderFacetValue"/>
+                        </VBox>
+                        <VBox class="cornelsenHeaderFacet sapUiTinyMarginEnd sapUiTinyMarginBottom">
+                            <Text text="Abteilung" class="cornelsenHeaderFacetLabel"/>
+                            <Text text="{Department}" class="cornelsenHeaderFacetValue"/>
+                        </VBox>
+                        <VBox class="cornelsenHeaderFacet sapUiTinyMarginEnd sapUiTinyMarginBottom">
+                            <Text text="Standort" class="cornelsenHeaderFacetLabel"/>
+                            <Text text="{Location}" class="cornelsenHeaderFacetValue"/>
+                        </VBox>
+                        <VBox class="cornelsenHeaderFacet sapUiTinyMarginEnd sapUiTinyMarginBottom">
+                            <Text text="ID" class="cornelsenHeaderFacetLabel"/>
+                            <Text text="{ID}" class="cornelsenHeaderFacetValue"/>
+                        </VBox>
+                    </HBox>
+                    <HBox>
+                        <Button text="{i18n>objectEmail}" icon="sap-icon://email" type="Transparent" press=".onSendEmail" class="sapUiTinyMarginEnd"/>
+                        <Button text="{i18n>objectCall}" icon="sap-icon://call" type="Transparent" press=".onCall"/>
+                    </HBox>
+                </VBox>
+            </HBox>
+        </uxap:headerContent>
+        <uxap:sections>
+            <!-- General Information -->
+            <uxap:ObjectPageSection title="{i18n>objectGeneralInfo}" titleUppercase="false">
+                <uxap:subSections>
+                    <uxap:ObjectPageSubSection title="Details" titleUppercase="false">
+                        <uxap:blocks>
+                            <layout:Grid defaultSpan="L6 M6 S12">
+                                <layout:content>
+                                    <VBox class="sapUiSmallMargin">
+                                        <Label text="{i18n>objectBio}" design="Bold" class="sapUiTinyMarginBottom"/>
+                                        <Text text="{Bio}" class="sapUiSmallMarginBottom"/>
+                                        <layout:Grid defaultSpan="L6 M6 S12">
+                                            <layout:content>
+                                                <VBox class="sapUiTinyMarginBottom">
+                                                    <Label text="{i18n>objectHireDate}"/>
+                                                    <Text text="{HireDate}"/>
+                                                </VBox>
+                                                <VBox class="sapUiTinyMarginBottom">
+                                                    <Label text="{i18n>objectCostCenter}"/>
+                                                    <Text text="{CostCenter}"/>
+                                                </VBox>
+                                                <VBox class="sapUiTinyMarginBottom">
+                                                    <Label text="{i18n>objectEmployeeGroup}"/>
+                                                    <Text text="{EmployeeGroup}"/>
+                                                </VBox>
+                                                <VBox class="sapUiTinyMarginBottom">
+                                                    <Label text="{i18n>objectManager}"/>
+                                                    <Link text="{Manager}" press=".onManagerPress"/>
+                                                </VBox>
+                                            </layout:content>
+                                        </layout:Grid>
+                                    </VBox>
+                                    <VBox class="sapUiSmallMargin">
+                                        <Title text="Kennzahlen" level="H4" class="sapUiSmallMarginBottom"/>
+                                        <HBox wrap="Wrap">
+                                            <VBox class="cornelsenHeaderFacet sapUiTinyMarginEnd sapUiTinyMarginBottom" alignItems="Center">
+                                                <Text text="{i18n>objectKpiProjects}" class="cornelsenHeaderFacetLabel"/>
+                                                <ObjectNumber number="{KPIs/ProjectsActive}" emphasized="true" class="cornelsenHeaderFacetValue"/>
+                                            </VBox>
+                                            <VBox class="cornelsenHeaderFacet sapUiTinyMarginEnd sapUiTinyMarginBottom" alignItems="Center">
+                                                <Text text="{i18n>objectKpiTeam}" class="cornelsenHeaderFacetLabel"/>
+                                                <ObjectNumber number="{KPIs/TeamSize}" emphasized="true" class="cornelsenHeaderFacetValue"/>
+                                            </VBox>
+                                            <VBox class="cornelsenHeaderFacet sapUiTinyMarginEnd sapUiTinyMarginBottom" alignItems="Center">
+                                                <Text text="{i18n>objectKpiSatisfaction}" class="cornelsenHeaderFacetLabel"/>
+                                                <ObjectNumber number="{KPIs/Satisfaction}" unit="/ 5" emphasized="true" class="cornelsenHeaderFacetValue"/>
+                                            </VBox>
+                                            <VBox class="cornelsenHeaderFacet sapUiTinyMarginBottom" alignItems="Center">
+                                                <Text text="{i18n>objectKpiUtilization}" class="cornelsenHeaderFacetLabel"/>
+                                                <ObjectNumber number="{KPIs/Utilization}" unit="%" emphasized="true" class="cornelsenHeaderFacetValue"/>
+                                            </VBox>
+                                        </HBox>
+                                    </VBox>
+                                </layout:content>
+                            </layout:Grid>
+                        </uxap:blocks>
+                    </uxap:ObjectPageSubSection>
+                </uxap:subSections>
+            </uxap:ObjectPageSection>
+
+            <!-- Contact -->
+            <uxap:ObjectPageSection title="{i18n>objectContact}" titleUppercase="false">
+                <uxap:subSections>
+                    <uxap:ObjectPageSubSection title="Kontaktdaten" titleUppercase="false">
+                        <uxap:blocks>
+                            <layout:Grid defaultSpan="L6 M6 S12">
+                                <layout:content>
+                                    <VBox class="sapUiSmallMargin">
+                                        <core:Icon src="sap-icon://email" size="1rem" class="sapUiTinyMarginEnd"/>
+                                        <Label text="E-Mail" design="Bold"/>
+                                        <Link text="{Email}" href="mailto:{Email}" class="sapUiTinyMarginBottom"/>
+                                        <Label text="Telefon"/>
+                                        <Text text="{Phone}" class="sapUiTinyMarginBottom"/>
+                                        <Label text="Mobil"/>
+                                        <Text text="{Mobile}"/>
+                                    </VBox>
+                                    <VBox class="sapUiSmallMargin">
+                                        <Label text="{i18n>objectAddress}" design="Bold" class="sapUiTinyMarginBottom"/>
+                                        <Text text="{Address/Street}"/>
+                                        <Text text="{Address/PostalCode} {Address/City}"/>
+                                        <Text text="{Address/Country}"/>
+                                    </VBox>
+                                </layout:content>
+                            </layout:Grid>
+                        </uxap:blocks>
+                    </uxap:ObjectPageSubSection>
+                    <uxap:ObjectPageSubSection title="{i18n>objectRelatedContacts}" titleUppercase="false">
+                        <uxap:blocks>
+                            <Table
+                                items="{Contacts}"
+                                growing="false"
+                                noDataText="Keine Ansprechpartner">
+                                <columns>
+                                    <Column><Text text="Typ"/></Column>
+                                    <Column><Text text="Name"/></Column>
+                                    <Column><Text text="E-Mail"/></Column>
+                                    <Column><Text text="Telefon"/></Column>
+                                </columns>
+                                <items>
+                                    <ColumnListItem>
+                                        <cells>
+                                            <ObjectStatus text="{Type}" state="Information"/>
+                                            <Text text="{Name}"/>
+                                            <Link text="{Email}" href="mailto:{Email}"/>
+                                            <Text text="{Phone}"/>
+                                        </cells>
+                                    </ColumnListItem>
+                                </items>
+                            </Table>
+                        </uxap:blocks>
+                    </uxap:ObjectPageSubSection>
+                </uxap:subSections>
+            </uxap:ObjectPageSection>
+
+            <!-- Organization -->
+            <uxap:ObjectPageSection title="{i18n>objectOrganization}" titleUppercase="false">
+                <uxap:subSections>
+                    <uxap:ObjectPageSubSection>
+                        <uxap:blocks>
+                            <layout:Grid defaultSpan="L4 M6 S12">
+                                <layout:content>
+                                    <f:Card class="cornelsenContentCard sapUiSmallMargin">
+                                        <f:content>
+                                            <VBox class="sapUiSmallMargin" alignItems="Center">
+                                                <core:Icon src="sap-icon://org-chart" size="2rem" color="#003366" class="sapUiSmallMarginBottom"/>
+                                                <Title text="{Department}" level="H4"/>
+                                                <Text text="Abteilung" class="sapThemeLightText"/>
+                                            </VBox>
+                                        </f:content>
+                                    </f:Card>
+                                    <f:Card class="cornelsenContentCard sapUiSmallMargin">
+                                        <f:content>
+                                            <VBox class="sapUiSmallMargin" alignItems="Center">
+                                                <core:Icon src="sap-icon://map" size="2rem" color="#00A0B0" class="sapUiSmallMarginBottom"/>
+                                                <Title text="{Location}" level="H4"/>
+                                                <Text text="Standort" class="sapThemeLightText"/>
+                                            </VBox>
+                                        </f:content>
+                                    </f:Card>
+                                    <f:Card class="cornelsenContentCard sapUiSmallMargin">
+                                        <f:content>
+                                            <VBox class="sapUiSmallMargin" alignItems="Center">
+                                                <core:Icon src="sap-icon://manager" size="2rem" color="#E30613" class="sapUiSmallMarginBottom"/>
+                                                <Link text="{Manager}" press=".onManagerPress" class="sapUiSmallMarginBottom"/>
+                                                <Text text="Vorgesetzter" class="sapThemeLightText"/>
+                                            </VBox>
+                                        </f:content>
+                                    </f:Card>
+                                </layout:content>
+                            </layout:Grid>
+                        </uxap:blocks>
+                    </uxap:ObjectPageSubSection>
+                </uxap:subSections>
+            </uxap:ObjectPageSection>
+
+            <!-- Projects -->
+            <uxap:ObjectPageSection title="{i18n>objectProjects}" titleUppercase="false">
+                <uxap:subSections>
+                    <uxap:ObjectPageSubSection>
+                        <uxap:blocks>
+                            <Table items="{Projects}" growing="false">
+                                <columns>
+                                    <Column><Text text="{i18n>objectProjectName}"/></Column>
+                                    <Column><Text text="{i18n>objectProjectRole}"/></Column>
+                                    <Column><Text text="{i18n>objectProjectStatus}"/></Column>
+                                    <Column width="20%"><Text text="{i18n>objectProjectProgress}"/></Column>
+                                    <Column><Text text="{i18n>objectProjectDue}"/></Column>
+                                </columns>
+                                <items>
+                                    <ColumnListItem>
+                                        <cells>
+                                            <Text text="{Name}"/>
+                                            <Text text="{Role}"/>
+                                            <ObjectStatus
+                                                text="{Status}"
+                                                state="{= ${Status} === 'Completed' ? 'Success' : ${Status} === 'In Progress' ? 'Information' : 'Warning' }"/>
+                                            <ProgressIndicator
+                                                percentValue="{Progress}"
+                                                displayValue="{Progress}%"
+                                                showValue="true"
+                                                state="{= ${Progress} === 100 ? 'Success' : 'None' }"/>
+                                            <Text text="{DueDate}"/>
+                                        </cells>
+                                    </ColumnListItem>
+                                </items>
+                            </Table>
+                        </uxap:blocks>
+                    </uxap:ObjectPageSubSection>
+                </uxap:subSections>
+            </uxap:ObjectPageSection>
+
+            <!-- Skills -->
+            <uxap:ObjectPageSection title="{i18n>objectSkills}" titleUppercase="false">
+                <uxap:subSections>
+                    <uxap:ObjectPageSubSection>
+                        <uxap:blocks>
+                            <List items="{Skills}" showSeparators="None" showNoData="false">
+                                <CustomListItem>
+                                    <VBox class="sapUiSmallMarginBottom">
+                                        <HBox justifyContent="SpaceBetween" alignItems="Center">
+                                            <Label text="{Name}" design="Bold"/>
+                                            <Text text="{Level}%"/>
+                                        </HBox>
+                                        <ProgressIndicator
+                                            percentValue="{Level}"
+                                            displayValue=""
+                                            showValue="false"
+                                            state="{= ${Level} >= 90 ? 'Success' : ${Level} >= 70 ? 'Information' : 'Warning' }"/>
+                                    </VBox>
+                                </CustomListItem>
+                            </List>
+                        </uxap:blocks>
+                    </uxap:ObjectPageSubSection>
+                </uxap:subSections>
+            </uxap:ObjectPageSection>
+
+            <!-- Documents -->
+            <uxap:ObjectPageSection title="{i18n>objectDocuments}" titleUppercase="false">
+                <uxap:subSections>
+                    <uxap:ObjectPageSubSection>
+                        <uxap:blocks>
+                            <Table items="{Documents}" growing="false" noDataText="Keine Dokumente">
+                                <columns>
+                                    <Column><Text text="{i18n>objectDocName}"/></Column>
+                                    <Column><Text text="{i18n>objectDocType}"/></Column>
+                                    <Column><Text text="{i18n>objectDocDate}"/></Column>
+                                    <Column><Text text="{i18n>objectDocSize}"/></Column>
+                                    <Column width="80px"><Text text=""/></Column>
+                                </columns>
+                                <items>
+                                    <ColumnListItem>
+                                        <cells>
+                                            <HBox alignItems="Center">
+                                                <core:Icon src="sap-icon://pdf-attachment" size="1.25rem" class="sapUiTinyMarginEnd" color="#E30613"/>
+                                                <Text text="{Name}"/>
+                                            </HBox>
+                                            <ObjectStatus text="{Type}" state="Information"/>
+                                            <Text text="{Date}"/>
+                                            <Text text="{Size}"/>
+                                            <Button icon="sap-icon://download" type="Transparent" tooltip="Herunterladen"/>
+                                        </cells>
+                                    </ColumnListItem>
+                                </items>
+                            </Table>
+                        </uxap:blocks>
+                    </uxap:ObjectPageSubSection>
+                </uxap:subSections>
+            </uxap:ObjectPageSection>
+
+            <!-- Activities -->
+            <uxap:ObjectPageSection title="{i18n>objectActivities}" titleUppercase="false">
+                <uxap:subSections>
+                    <uxap:ObjectPageSubSection>
+                        <uxap:blocks>
+                            <List items="{Activities}" showSeparators="Inner" noDataText="Keine Aktivitäten" class="cornelsenTimeline">
+                                <StandardListItem
+                                    title="{Title}"
+                                    description="{Type}"
+                                    info="{Date}"
+                                    icon="{Icon}"
+                                    iconInset="false"/>
+                            </List>
+                        </uxap:blocks>
+                    </uxap:ObjectPageSubSection>
+                </uxap:subSections>
+            </uxap:ObjectPageSection>
+        </uxap:sections>
+    </uxap:ObjectPageLayout>
+</mvc:View>
