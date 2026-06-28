@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "SAP Fiori Talent Portal — Cornelsen-inspired enterprise application",
   "scripts": {
-    "start": "ui5 serve --open index.html",
+    "start": "ui5 serve --port 8080 --accept-remote-connections --open index.html",
+    "start:bas": "ui5 serve --port 8080 --accept-remote-connections",
     "build": "ui5 build --all"
   },
   "devDependencies": {

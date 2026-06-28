@@ -15,3 +15,4 @@ framework:
 server:
   settings:
     httpPort: 8080
+    acceptRemoteConnections: true

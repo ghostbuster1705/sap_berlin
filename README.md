@@ -25,6 +25,32 @@ npm start
 
 Open [http://localhost:8080/index.html](http://localhost:8080/index.html)
 
+## SAP Business Application Studio (BAS)
+
+```bash
+cd projects
+git clone https://github.com/ghostbuster1705/sap_berlin.git
+cd sap_berlin
+git checkout cursor/sap-cornelsen-app-6777
+npm install
+npm run start:bas
+```
+
+Then open the **Preview** link for port 8080 in BAS, or:
+
+```
+https://port8080-workspaces-ws-mueya.us10.trial.applicationstudio.cloud.sap/index.html
+```
+
+**Important:** The server must be running (`npm run start:bas`) before opening the preview URL.
+Use `accept-remote-connections` so BAS port forwarding works.
+
+If the page is blank:
+1. Check the terminal — `ui5 serve` must be running without errors
+2. Open browser DevTools (F12) → Console for error messages
+3. Make sure you are in the project root (where `ui5.yaml` is located)
+4. Try `http://localhost:8080/index.html` inside BAS preview first
+
 ## Project Structure
 
 ```
