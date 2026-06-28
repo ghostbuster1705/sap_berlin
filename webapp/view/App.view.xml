@@ -17,8 +17,8 @@
                 <HBox alignItems="Center" class="sapUiSmallMarginBegin">
                     <core:Icon src="sap-icon://education" size="1.5rem" color="#ffffff" class="sapUiTinyMarginEnd"/>
                     <VBox>
-                        <Title text="Cornelsen Talent Portal" level="H4"/>
-                        <Text text="SAP Fiori · S/4HANA Cloud" class="cornelsenBrandSubtitle"/>
+                            <Title text="Cornelsen Talent Portal" level="H4"/>
+                            <Text text="v2.0 · SAP Fiori" class="cornelsenBrandSubtitle"/>
                     </VBox>
                 </HBox>
             </contentLeft>

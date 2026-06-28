@@ -40,7 +40,6 @@
                 "sap.ui.core": {},
                 "sap.ui.layout": {},
                 "sap.uxap": {},
-                "sap.f": {},
                 "sap.ui.unified": {}
             }
         },
@@ -52,7 +51,9 @@
             "i18n": {
                 "type": "sap.ui.model.resource.ResourceModel",
                 "settings": {
-                    "bundleName": "cornelsen.talent.portal.i18n.i18n"
+                    "bundleUrl": "i18n/i18n.properties",
+                    "supportedLocales": [""],
+                    "fallbackLocale": ""
                 }
             },
             "": {

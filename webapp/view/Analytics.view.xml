@@ -3,137 +3,64 @@
     xmlns:mvc="sap.ui.core.mvc"
     xmlns="sap.m"
     xmlns:core="sap.ui.core"
-    xmlns:f="sap.f"
     xmlns:layout="sap.ui.layout">
-    <Page
-        title="{i18n>analyticsTitle}"
-        showNavButton="false"
-        class="sapUiResponsiveContentPadding">
+    <Page title="{i18n>analyticsTitle}" showNavButton="false" class="sapUiResponsiveContentPadding">
         <content>
             <Text text="{i18n>analyticsSubtitle}" class="sapUiSmallMarginBottom sapThemeLightText"/>
 
             <layout:Grid defaultSpan="L3 M6 S12" class="sapUiMediumMarginBottom">
                 <layout:content>
-                    <f:Card class="cornelsenKpiCard cornelsenKpiBlue">
-                        <f:content>
+                    <Panel class="cornelsenKpiCard cornelsenKpiBlue">
+                        <content>
                             <VBox class="sapUiSmallMargin" alignItems="Center">
-                                <VBox class="cornelsenKpiIconWrap sapUiSmallMarginBottom" justifyContent="Center" alignItems="Center">
-                                    <core:Icon src="sap-icon://employee" size="1.5rem"/>
-                                </VBox>
+                                <core:Icon src="sap-icon://employee" size="2rem" color="#ffffff" class="sapUiSmallMarginBottom"/>
                                 <Text text="2.847" class="cornelsenKpiValue"/>
                                 <Text text="Gesamtmitarbeiter"/>
                             </VBox>
-                        </f:content>
-                    </f:Card>
-                    <f:Card class="cornelsenKpiCard cornelsenKpiTeal">
-                        <f:content>
+                        </content>
+                    </Panel>
+                    <Panel class="cornelsenKpiCard cornelsenKpiTeal">
+                        <content>
                             <VBox class="sapUiSmallMargin" alignItems="Center">
-                                <VBox class="cornelsenKpiIconWrap sapUiSmallMarginBottom" justifyContent="Center" alignItems="Center">
-                                    <core:Icon src="sap-icon://add-employee" size="1.5rem"/>
-                                </VBox>
+                                <core:Icon src="sap-icon://add-employee" size="2rem" color="#ffffff" class="sapUiSmallMarginBottom"/>
                                 <Text text="142" class="cornelsenKpiValue"/>
                                 <Text text="Einstellungen YTD"/>
                             </VBox>
-                        </f:content>
-                    </f:Card>
-                    <f:Card class="cornelsenKpiCard cornelsenKpiOrange">
-                        <f:content>
+                        </content>
+                    </Panel>
+                    <Panel class="cornelsenKpiCard cornelsenKpiOrange">
+                        <content>
                             <VBox class="sapUiSmallMargin" alignItems="Center">
-                                <VBox class="cornelsenKpiIconWrap sapUiSmallMarginBottom" justifyContent="Center" alignItems="Center">
-                                    <core:Icon src="sap-icon://away" size="1.5rem"/>
-                                </VBox>
+                                <core:Icon src="sap-icon://away" size="2rem" color="#ffffff" class="sapUiSmallMarginBottom"/>
                                 <Text text="4.1%" class="cornelsenKpiValue"/>
                                 <Text text="Fluktuationsrate"/>
                             </VBox>
-                        </f:content>
-                    </f:Card>
-                    <f:Card class="cornelsenKpiCard cornelsenKpiGreen">
-                        <f:content>
+                        </content>
+                    </Panel>
+                    <Panel class="cornelsenKpiCard cornelsenKpiGreen">
+                        <content>
                             <VBox class="sapUiSmallMargin" alignItems="Center">
-                                <VBox class="cornelsenKpiIconWrap sapUiSmallMarginBottom" justifyContent="Center" alignItems="Center">
-                                    <core:Icon src="sap-icon://favorite" size="1.5rem"/>
-                                </VBox>
+                                <core:Icon src="sap-icon://favorite" size="2rem" color="#ffffff" class="sapUiSmallMarginBottom"/>
                                 <Text text="4.6" class="cornelsenKpiValue"/>
                                 <Text text="Ø Zufriedenheit"/>
                             </VBox>
-                        </f:content>
-                    </f:Card>
+                        </content>
+                    </Panel>
                 </layout:content>
             </layout:Grid>
 
             <Title text="{i18n>analyticsDepartment}" level="H3" class="sapUiMediumMarginBottom"/>
-            <f:Card class="cornelsenContentCard sapUiMediumMarginBottom">
-                <f:content>
+            <Panel class="cornelsenContentCard sapUiMediumMarginBottom">
+                <content>
                     <VBox items="{dashboard>/DepartmentDistribution}" class="sapUiSmallMargin">
                         <HBox alignItems="Center" class="sapUiSmallMarginBottom">
                             <Text text="{dashboard>Department}" width="140px" class="sapUiTinyMarginEnd"/>
-                            <ProgressIndicator
-                                percentValue="{dashboard>Percentage}"
-                                displayValue="{dashboard>Count}"
-                                showValue="true"
-                                width="100%"
-                                state="None"
-                                class="sapUiTinyMarginEnd"/>
+                            <ProgressIndicator percentValue="{dashboard>Percentage}" displayValue="{dashboard>Count}" showValue="true" width="100%" class="sapUiTinyMarginEnd"/>
                             <Text text="{dashboard>Percentage}%" width="45px" textAlign="End" class="sapThemeLightText"/>
                         </HBox>
                     </VBox>
-                </f:content>
-            </f:Card>
-
-            <layout:Grid defaultSpan="L6 M12 S12">
-                <layout:content>
-                    <f:Card class="cornelsenContentCard sapUiTinyMarginBottom">
-                        <f:content>
-                            <VBox>
-                                <Title text="Einstellungen nach Monat" level="H5" class="sapUiSmallMargin"/>
-                            <VBox class="sapUiMediumMargin" alignItems="Center" justifyContent="Center" height="200px">
-                                <HBox alignItems="End" justifyContent="Center" width="100%">
-                                    <VBox alignItems="Center" class="sapUiTinyMargin">
-                                        <VBox height="40px" width="32px" class="cornelsenDeptBarFill" style="height: 40px;"/>
-                                        <Text text="Jan" class="sapUiTinyMarginTop"/>
-                                    </VBox>
-                                    <VBox alignItems="Center" class="sapUiTinyMargin">
-                                        <VBox height="55px" width="32px" class="cornelsenDeptBarFill" style="height: 55px;"/>
-                                        <Text text="Feb" class="sapUiTinyMarginTop"/>
-                                    </VBox>
-                                    <VBox alignItems="Center" class="sapUiTinyMargin">
-                                        <VBox height="35px" width="32px" class="cornelsenDeptBarFill" style="height: 35px;"/>
-                                        <Text text="Mär" class="sapUiTinyMarginTop"/>
-                                    </VBox>
-                                    <VBox alignItems="Center" class="sapUiTinyMargin">
-                                        <VBox height="70px" width="32px" class="cornelsenDeptBarFill" style="height: 70px;"/>
-                                        <Text text="Apr" class="sapUiTinyMarginTop"/>
-                                    </VBox>
-                                    <VBox alignItems="Center" class="sapUiTinyMargin">
-                                        <VBox height="60px" width="32px" class="cornelsenDeptBarFill" style="height: 60px;"/>
-                                        <Text text="Mai" class="sapUiTinyMarginTop"/>
-                                    </VBox>
-                                    <VBox alignItems="Center" class="sapUiTinyMargin">
-                                        <VBox height="85px" width="32px" class="cornelsenDeptBarFill" style="height: 85px;"/>
-                                        <Text text="Jun" class="sapUiTinyMarginTop"/>
-                                    </VBox>
-                                </HBox>
-                            </VBox>
-                            </VBox>
-                        </f:content>
-                    </f:Card>
-
-                    <f:Card class="cornelsenContentCard sapUiTinyMarginBottom">
-                        <f:content>
-                            <VBox>
-                                <Title text="Standorte" level="H5" class="sapUiSmallMargin"/>
-                            <List class="sapUiSmallMargin">
-                                <StandardListItem title="Berlin (HQ)" description="1.420 Mitarbeiter" info="50%" icon="sap-icon://building"/>
-                                <StandardListItem title="Hamburg" description="380 Mitarbeiter" info="13%" icon="sap-icon://building"/>
-                                <StandardListItem title="München" description="290 Mitarbeiter" info="10%" icon="sap-icon://building"/>
-                                <StandardListItem title="Frankfurt" description="245 Mitarbeiter" info="9%" icon="sap-icon://building"/>
-                                <StandardListItem title="Weitere" description="512 Mitarbeiter" info="18%" icon="sap-icon://map-2"/>
-                            </List>
-                            </VBox>
-                        </f:content>
-                    </f:Card>
-                </layout:content>
-            </layout:Grid>
+                </content>
+            </Panel>
         </content>
     </Page>
 </mvc:View>
