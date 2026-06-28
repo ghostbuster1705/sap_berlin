@@ -9,8 +9,8 @@ sap.ui.define([
 
     return Controller.extend("cornelsen.talent.portal.controller.ObjectPage", {
         onInit: function () {
-            var oRouter = UIComponent.getRouterFor(this);
-            oRouter.getRoute("object").attachPatternMatched(this._onObjectMatched, this);
+            this.getOwnerComponent().getRouter().getRoute("object")
+                .attachPatternMatched(this._onObjectMatched, this);
         },
 
         _onObjectMatched: function (oEvent) {
@@ -61,9 +61,7 @@ sap.ui.define([
         onManagerPress: function () {
             var sManagerId = this.getView().getModel().getProperty("/ManagerID");
             if (sManagerId) {
-                UIComponent.getRouterFor(this).navTo("object", {
-                    employeeId: sManagerId
-                });
+                this.getOwnerComponent().getRouter().navTo("object", { employeeId: sManagerId });
             }
         }
     });
