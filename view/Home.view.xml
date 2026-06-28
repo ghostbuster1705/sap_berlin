@@ -1,0 +1,117 @@
+<mvc:View
+    controllerName="cornelsen.talent.portal.controller.Home"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:layout="sap.ui.layout">
+    <Page showHeader="false" enableScrolling="true" class="sapUiContentPadding">
+        <content>
+            <VBox class="cornelsenHero sapUiMediumMarginBottom">
+                <Title text="{i18n>homeWelcome}, Anna!" class="cornelsenHeroTitle sapUiTinyMarginBottom"/>
+                <Text text="{i18n>homeSubtitle}" class="cornelsenHeroSubtitle"/>
+            </VBox>
+
+            <layout:Grid defaultSpan="L3 M6 S12" class="sapUiSmallMarginBottom">
+                <layout:content>
+                    <Panel class="cornelsenKpiCard cornelsenKpiBlue sapUiTinyMarginBottom">
+                        <content>
+                            <VBox class="sapUiSmallMargin" justifyContent="SpaceBetween" height="100px">
+                                <HBox justifyContent="SpaceBetween" alignItems="Start">
+                                    <VBox>
+                                        <Text text="{dashboard>/KPIs/0/title}"/>
+                                        <Text text="{dashboard>/KPIs/0/value}" class="cornelsenKpiValue"/>
+                                    </VBox>
+                                    <core:Icon src="{dashboard>/KPIs/0/icon}" size="1.5rem" color="#ffffff"/>
+                                </HBox>
+                                <ObjectStatus text="{dashboard>/KPIs/0/trend}" state="{dashboard>/KPIs/0/trendState}"/>
+                            </VBox>
+                        </content>
+                    </Panel>
+                    <Panel class="cornelsenKpiCard cornelsenKpiTeal sapUiTinyMarginBottom">
+                        <content>
+                            <VBox class="sapUiSmallMargin" justifyContent="SpaceBetween" height="100px">
+                                <HBox justifyContent="SpaceBetween" alignItems="Start">
+                                    <VBox>
+                                        <Text text="{dashboard>/KPIs/1/title}"/>
+                                        <Text text="{dashboard>/KPIs/1/value}" class="cornelsenKpiValue"/>
+                                    </VBox>
+                                    <core:Icon src="{dashboard>/KPIs/1/icon}" size="1.5rem" color="#ffffff"/>
+                                </HBox>
+                                <ObjectStatus text="{dashboard>/KPIs/1/trend}" state="{dashboard>/KPIs/1/trendState}"/>
+                            </VBox>
+                        </content>
+                    </Panel>
+                    <Panel class="cornelsenKpiCard cornelsenKpiOrange sapUiTinyMarginBottom">
+                        <content>
+                            <VBox class="sapUiSmallMargin" justifyContent="SpaceBetween" height="100px">
+                                <HBox justifyContent="SpaceBetween" alignItems="Start">
+                                    <VBox>
+                                        <Text text="{dashboard>/KPIs/2/title}"/>
+                                        <Text text="{dashboard>/KPIs/2/value}" class="cornelsenKpiValue"/>
+                                    </VBox>
+                                    <core:Icon src="{dashboard>/KPIs/2/icon}" size="1.5rem" color="#ffffff"/>
+                                </HBox>
+                                <ObjectStatus text="{dashboard>/KPIs/2/trend}" state="{dashboard>/KPIs/2/trendState}"/>
+                            </VBox>
+                        </content>
+                    </Panel>
+                    <Panel class="cornelsenKpiCard cornelsenKpiGreen sapUiTinyMarginBottom">
+                        <content>
+                            <VBox class="sapUiSmallMargin" justifyContent="SpaceBetween" height="100px">
+                                <HBox justifyContent="SpaceBetween" alignItems="Start">
+                                    <VBox>
+                                        <Text text="{dashboard>/KPIs/3/title}"/>
+                                        <Text text="{dashboard>/KPIs/3/value}" class="cornelsenKpiValue"/>
+                                    </VBox>
+                                    <core:Icon src="{dashboard>/KPIs/3/icon}" size="1.5rem" color="#ffffff"/>
+                                </HBox>
+                                <ObjectStatus text="{dashboard>/KPIs/3/trend}" state="{dashboard>/KPIs/3/trendState}"/>
+                            </VBox>
+                        </content>
+                    </Panel>
+                </layout:content>
+            </layout:Grid>
+
+            <Panel class="cornelsenContentCard sapUiSmallMarginBottom">
+                <headerToolbar>
+                    <Toolbar>
+                        <Title text="{i18n>homeQuickActions}" level="H5"/>
+                    </Toolbar>
+                </headerToolbar>
+                <content>
+                    <HBox class="sapUiSmallMargin" wrap="Wrap">
+                        <Button text="Mitarbeiter anlegen" icon="sap-icon://add-employee" type="Emphasized" class="cornelsenQuickAction sapUiTinyMarginEnd sapUiTinyMarginBottom" press=".onNavWorklist"/>
+                        <Button text="Urlaubsantrag" icon="sap-icon://calendar" class="cornelsenQuickAction sapUiTinyMarginEnd sapUiTinyMarginBottom"/>
+                        <Button text="Zeiterfassung" icon="sap-icon://time-entry-request" class="cornelsenQuickAction sapUiTinyMarginEnd sapUiTinyMarginBottom"/>
+                        <Button text="Analytik" icon="sap-icon://bar-chart" class="cornelsenQuickAction sapUiTinyMarginEnd sapUiTinyMarginBottom" press=".onNavAnalytics"/>
+                    </HBox>
+                </content>
+            </Panel>
+
+            <layout:Grid defaultSpan="L6 M12 S12" class="sapUiSmallMarginBottom">
+                <layout:content>
+                    <Panel class="cornelsenContentCard sapUiTinyMarginBottom">
+                        <headerToolbar>
+                            <Toolbar><Title text="{i18n>homeRecentHires}" level="H5"/></Toolbar>
+                        </headerToolbar>
+                        <content>
+                            <List items="{dashboard>/RecentHires}">
+                                <StandardListItem title="{dashboard>Name}" description="{dashboard>Department}" info="{dashboard>Date}" icon="sap-icon://employee" type="Active" press=".onEmployeePress"/>
+                            </List>
+                        </content>
+                    </Panel>
+                    <Panel class="cornelsenContentCard sapUiTinyMarginBottom">
+                        <headerToolbar>
+                            <Toolbar><Title text="{i18n>homeUpcomingEvents}" level="H5"/></Toolbar>
+                        </headerToolbar>
+                        <content>
+                            <List items="{dashboard>/UpcomingEvents}">
+                                <StandardListItem title="{dashboard>Title}" description="{dashboard>Location}" info="{dashboard>Date}" icon="sap-icon://appointment-2"/>
+                            </List>
+                        </content>
+                    </Panel>
+                </layout:content>
+            </layout:Grid>
+        </content>
+    </Page>
+</mvc:View>

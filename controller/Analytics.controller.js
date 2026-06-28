@@ -1,0 +1,2 @@
+sap.ui.define(["sap/ui/core/mvc/Controller","sap/ui/model/json/JSONModel"],function(o,e){"use strict";return o.extend("cornelsen.talent.portal.controller.Analytics",{onInit:function(){var o=this.getOwnerComponent();if(!o.getModel("dashboard")){var n=new e;n.loadData("model/mockdata/Dashboard.json");o.setModel(n,"dashboard")}}})});
+//# sourceMappingURL=Analytics.controller.js.map

@@ -1,0 +1,314 @@
+{
+    "Employees": [
+        {
+            "ID": "E001",
+            "FirstName": "Anna",
+            "LastName": "Müller",
+            "FullName": "Anna Müller",
+            "Title": "Senior Product Manager",
+            "Department": "Digital Learning",
+            "Location": "Berlin",
+            "Country": "Deutschland",
+            "Email": "anna.mueller@cornelsen.de",
+            "Phone": "+49 30 89785-4201",
+            "Mobile": "+49 171 2345678",
+            "Status": "Active",
+            "StatusState": "Success",
+            "HireDate": "2018-03-15",
+            "Manager": "Dr. Thomas Weber",
+            "ManagerID": "E005",
+            "CostCenter": "CC-4100",
+            "EmployeeGroup": "Management",
+            "Avatar": "",
+            "Initials": "AM",
+            "Bio": "Leitet die strategische Entwicklung digitaler Lernplattformen für den Sekundarbereich. Über 12 Jahre Erfahrung im EdTech-Bereich.",
+            "Skills": [
+                { "Name": "Product Strategy", "Level": 95 },
+                { "Name": "Agile Leadership", "Level": 90 },
+                { "Name": "UX Design", "Level": 78 },
+                { "Name": "SAP S/4HANA", "Level": 65 },
+                { "Name": "Data Analytics", "Level": 72 }
+            ],
+            "Projects": [
+                { "ID": "P001", "Name": "Cornelsen Digital Classroom", "Role": "Product Owner", "Status": "In Progress", "Progress": 68, "DueDate": "2026-09-30" },
+                { "ID": "P002", "Name": "KI-gestützte Lernanalyse", "Role": "Stakeholder", "Status": "Planning", "Progress": 25, "DueDate": "2026-12-15" },
+                { "ID": "P003", "Name": "Fiori Rollout Phase 2", "Role": "Lead", "Status": "Completed", "Progress": 100, "DueDate": "2026-03-01" }
+            ],
+            "Contacts": [
+                { "Type": "Assistant", "Name": "Lisa Hartmann", "Email": "lisa.hartmann@cornelsen.de", "Phone": "+49 30 89785-4202" },
+                { "Type": "HR Partner", "Name": "Michael Braun", "Email": "michael.braun@cornelsen.de", "Phone": "+49 30 89785-3100" }
+            ],
+            "Address": {
+                "Street": "Mecklenburgische Straße 53",
+                "City": "Berlin",
+                "PostalCode": "14197",
+                "Country": "Deutschland"
+            },
+            "Documents": [
+                { "Name": "Arbeitsvertrag.pdf", "Type": "Contract", "Date": "2018-03-15", "Size": "245 KB" },
+                { "Name": "Zielvereinbarung 2026.pdf", "Type": "Goals", "Date": "2026-01-10", "Size": "128 KB" },
+                { "Name": "Zertifikat_SAP_Fiori.pdf", "Type": "Certificate", "Date": "2025-06-20", "Size": "89 KB" }
+            ],
+            "Activities": [
+                { "Title": "Projektmeeting Digital Classroom", "Date": "2026-06-25", "Type": "Meeting", "Icon": "sap-icon://meeting-room" },
+                { "Title": "Performance Review abgeschlossen", "Date": "2026-06-20", "Type": "HR", "Icon": "sap-icon://employee-approvals" },
+                { "Title": "Schulung SAP Fiori Elements", "Date": "2026-06-15", "Type": "Training", "Icon": "sap-icon://education" }
+            ],
+            "KPIs": {
+                "ProjectsActive": 2,
+                "TeamSize": 8,
+                "Satisfaction": 4.7,
+                "Utilization": 87
+            }
+        },
+        {
+            "ID": "E002",
+            "FirstName": "Max",
+            "LastName": "Schneider",
+            "FullName": "Max Schneider",
+            "Title": "Lead UX Designer",
+            "Department": "Design & Experience",
+            "Location": "Hamburg",
+            "Country": "Deutschland",
+            "Email": "max.schneider@cornelsen.de",
+            "Phone": "+49 40 12345-201",
+            "Mobile": "+49 160 9876543",
+            "Status": "Active",
+            "StatusState": "Success",
+            "HireDate": "2019-07-01",
+            "Manager": "Anna Müller",
+            "ManagerID": "E001",
+            "CostCenter": "CC-4200",
+            "EmployeeGroup": "Specialist",
+            "Avatar": "",
+            "Initials": "MS",
+            "Bio": "Verantwortlich für das Design-System und die User Experience aller Cornelsen Digital-Produkte.",
+            "Skills": [
+                { "Name": "Figma", "Level": 98 },
+                { "Name": "Design Systems", "Level": 95 },
+                { "Name": "SAP Fiori Design", "Level": 88 },
+                { "Name": "Prototyping", "Level": 92 },
+                { "Name": "Accessibility", "Level": 85 }
+            ],
+            "Projects": [
+                { "ID": "P004", "Name": "Design System 3.0", "Role": "Lead Designer", "Status": "In Progress", "Progress": 45, "DueDate": "2026-11-30" },
+                { "ID": "P001", "Name": "Cornelsen Digital Classroom", "Role": "UX Lead", "Status": "In Progress", "Progress": 68, "DueDate": "2026-09-30" }
+            ],
+            "Contacts": [
+                { "Type": "Manager", "Name": "Anna Müller", "Email": "anna.mueller@cornelsen.de", "Phone": "+49 30 89785-4201" }
+            ],
+            "Address": {
+                "Street": "Große Elbstraße 39",
+                "City": "Hamburg",
+                "PostalCode": "22767",
+                "Country": "Deutschland"
+            },
+            "Documents": [
+                { "Name": "Portfolio_2026.pdf", "Type": "Portfolio", "Date": "2026-02-01", "Size": "3.2 MB" }
+            ],
+            "Activities": [
+                { "Title": "Design Review Sprint 24", "Date": "2026-06-27", "Type": "Review", "Icon": "sap-icon://palette" }
+            ],
+            "KPIs": {
+                "ProjectsActive": 2,
+                "TeamSize": 5,
+                "Satisfaction": 4.9,
+                "Utilization": 92
+            }
+        },
+        {
+            "ID": "E003",
+            "FirstName": "Sophie",
+            "LastName": "Fischer",
+            "FullName": "Sophie Fischer",
+            "Title": "SAP Developer",
+            "Department": "IT & Digital",
+            "Location": "Berlin",
+            "Country": "Deutschland",
+            "Email": "sophie.fischer@cornelsen.de",
+            "Phone": "+49 30 89785-5501",
+            "Mobile": "+49 175 5566778",
+            "Status": "Active",
+            "StatusState": "Success",
+            "HireDate": "2021-01-11",
+            "Manager": "Dr. Thomas Weber",
+            "ManagerID": "E005",
+            "CostCenter": "CC-5100",
+            "EmployeeGroup": "Developer",
+            "Avatar": "",
+            "Initials": "SF",
+            "Bio": "Full-Stack-Entwicklerin mit Schwerpunkt auf SAP BTP, CAP und Fiori Elements.",
+            "Skills": [
+                { "Name": "ABAP", "Level": 90 },
+                { "Name": "SAP CAP", "Level": 88 },
+                { "Name": "JavaScript/TypeScript", "Level": 92 },
+                { "Name": "SAP BTP", "Level": 85 },
+                { "Name": "OData", "Level": 90 }
+            ],
+            "Projects": [
+                { "ID": "P003", "Name": "Fiori Rollout Phase 2", "Role": "Developer", "Status": "Completed", "Progress": 100, "DueDate": "2026-03-01" },
+                { "ID": "P005", "Name": "Talent Portal MVP", "Role": "Tech Lead", "Status": "In Progress", "Progress": 55, "DueDate": "2026-08-15" }
+            ],
+            "Contacts": [],
+            "Address": {
+                "Street": "Mecklenburgische Straße 53",
+                "City": "Berlin",
+                "PostalCode": "14197",
+                "Country": "Deutschland"
+            },
+            "Documents": [],
+            "Activities": [
+                { "Title": "Code Review Talent Portal", "Date": "2026-06-28", "Type": "Development", "Icon": "sap-icon://syntax" }
+            ],
+            "KPIs": {
+                "ProjectsActive": 1,
+                "TeamSize": 6,
+                "Satisfaction": 4.5,
+                "Utilization": 95
+            }
+        },
+        {
+            "ID": "E004",
+            "FirstName": "Jonas",
+            "LastName": "Wagner",
+            "FullName": "Jonas Wagner",
+            "Title": "Content Strategist",
+            "Department": "Editorial",
+            "Location": "München",
+            "Country": "Deutschland",
+            "Email": "jonas.wagner@cornelsen.de",
+            "Phone": "+49 89 98765-101",
+            "Mobile": "+49 151 2233445",
+            "Status": "On Leave",
+            "StatusState": "Warning",
+            "HireDate": "2017-09-01",
+            "Manager": "Dr. Petra Klein",
+            "ManagerID": "E006",
+            "CostCenter": "CC-3100",
+            "EmployeeGroup": "Editorial",
+            "Avatar": "",
+            "Initials": "JW",
+            "Bio": "Entwickelt Content-Strategien für digitale und gedruckte Bildungsmedien im Bereich Geisteswissenschaften.",
+            "Skills": [
+                { "Name": "Content Strategy", "Level": 93 },
+                { "Name": "Editorial", "Level": 90 },
+                { "Name": "SEO", "Level": 80 },
+                { "Name": "Project Management", "Level": 75 }
+            ],
+            "Projects": [
+                { "ID": "P006", "Name": "Geschichte Digital 2027", "Role": "Content Lead", "Status": "Planning", "Progress": 15, "DueDate": "2027-03-01" }
+            ],
+            "Contacts": [],
+            "Address": {
+                "Street": "Leopoldstraße 112",
+                "City": "München",
+                "PostalCode": "80802",
+                "Country": "Deutschland"
+            },
+            "Documents": [],
+            "Activities": [],
+            "KPIs": {
+                "ProjectsActive": 1,
+                "TeamSize": 3,
+                "Satisfaction": 4.3,
+                "Utilization": 0
+            }
+        },
+        {
+            "ID": "E005",
+            "FirstName": "Thomas",
+            "LastName": "Weber",
+            "FullName": "Dr. Thomas Weber",
+            "Title": "VP Digital Transformation",
+            "Department": "Executive Board",
+            "Location": "Berlin",
+            "Country": "Deutschland",
+            "Email": "thomas.weber@cornelsen.de",
+            "Phone": "+49 30 89785-1001",
+            "Mobile": "+49 170 9988776",
+            "Status": "Active",
+            "StatusState": "Success",
+            "HireDate": "2015-04-01",
+            "Manager": "CEO",
+            "ManagerID": "",
+            "CostCenter": "CC-1000",
+            "EmployeeGroup": "Executive",
+            "Avatar": "",
+            "Initials": "TW",
+            "Bio": "Verantwortlich für die digitale Transformation und SAP-Landschaft bei Cornelsen.",
+            "Skills": [
+                { "Name": "Digital Strategy", "Level": 98 },
+                { "Name": "SAP Architecture", "Level": 90 },
+                { "Name": "Change Management", "Level": 92 },
+                { "Name": "Leadership", "Level": 96 }
+            ],
+            "Projects": [
+                { "ID": "P003", "Name": "Fiori Rollout Phase 2", "Role": "Sponsor", "Status": "Completed", "Progress": 100, "DueDate": "2026-03-01" },
+                { "ID": "P007", "Name": "S/4HANA Migration", "Role": "Executive Sponsor", "Status": "In Progress", "Progress": 40, "DueDate": "2027-06-30" }
+            ],
+            "Contacts": [
+                { "Type": "Executive Assistant", "Name": "Claudia Richter", "Email": "claudia.richter@cornelsen.de", "Phone": "+49 30 89785-1000" }
+            ],
+            "Address": {
+                "Street": "Mecklenburgische Straße 53",
+                "City": "Berlin",
+                "PostalCode": "14197",
+                "Country": "Deutschland"
+            },
+            "Documents": [],
+            "Activities": [
+                { "Title": "Board Meeting Q2", "Date": "2026-06-26", "Type": "Executive", "Icon": "sap-icon://decision" }
+            ],
+            "KPIs": {
+                "ProjectsActive": 1,
+                "TeamSize": 45,
+                "Satisfaction": 4.8,
+                "Utilization": 78
+            }
+        },
+        {
+            "ID": "E006",
+            "FirstName": "Petra",
+            "LastName": "Klein",
+            "FullName": "Dr. Petra Klein",
+            "Title": "Director Editorial",
+            "Department": "Editorial",
+            "Location": "Berlin",
+            "Country": "Deutschland",
+            "Email": "petra.klein@cornelsen.de",
+            "Phone": "+49 30 89785-2001",
+            "Mobile": "+49 172 3344556",
+            "Status": "Active",
+            "StatusState": "Success",
+            "HireDate": "2012-06-01",
+            "Manager": "CEO",
+            "ManagerID": "",
+            "CostCenter": "CC-3000",
+            "EmployeeGroup": "Management",
+            "Avatar": "",
+            "Initials": "PK",
+            "Bio": "Leitet die redaktionelle Gesamtverantwortung für alle Fachbereiche.",
+            "Skills": [
+                { "Name": "Editorial Leadership", "Level": 97 },
+                { "Name": "Curriculum Design", "Level": 94 },
+                { "Name": "Publishing", "Level": 96 }
+            ],
+            "Projects": [],
+            "Contacts": [],
+            "Address": {
+                "Street": "Mecklenburgische Straße 53",
+                "City": "Berlin",
+                "PostalCode": "14197",
+                "Country": "Deutschland"
+            },
+            "Documents": [],
+            "Activities": [],
+            "KPIs": {
+                "ProjectsActive": 0,
+                "TeamSize": 120,
+                "Satisfaction": 4.6,
+                "Utilization": 82
+            }
+        }
+    ]
+}

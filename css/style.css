@@ -1,0 +1,360 @@
+/* Cornelsen Talent Portal — Custom Theme Extensions */
+
+:root {
+    --cornelsen-primary: #E30613;
+    --cornelsen-primary-dark: #B8050F;
+    --cornelsen-secondary: #003366;
+    --cornelsen-accent: #00A0B0;
+    --cornelsen-accent-light: #E6F7F9;
+    --cornelsen-surface: #F8FAFC;
+    --cornelsen-card-shadow: 0 2px 12px rgba(0, 51, 102, 0.08);
+    --cornelsen-radius: 12px;
+}
+
+.cornelsenBody {
+    background: var(--cornelsen-surface);
+}
+
+/* Shell Bar Branding */
+.cornelsenShell {
+    height: 100vh !important;
+    display: flex;
+    flex-direction: column;
+}
+
+.cornelsenMainRow {
+    flex: 1;
+    min-height: 0;
+    overflow: hidden;
+}
+
+.cornelsenMainArea {
+    overflow: hidden;
+    flex: 1;
+}
+
+.cornelsenShell .sapMBar {
+    background: linear-gradient(135deg, var(--cornelsen-secondary) 0%, #004080 100%) !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.cornelsenShellBar .sapMTitle {
+    color: #ffffff !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.02em;
+}
+
+.cornelsenShellBar .sapMBtnInner,
+.cornelsenShellBar .sapMBarChild .sapMBtnIcon {
+    color: #ffffff !important;
+}
+
+.cornelsenBrandLogo {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    background: var(--cornelsen-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 800;
+    font-size: 1.1rem;
+    font-family: '72', '72full', Arial, sans-serif;
+    margin-right: 12px;
+    box-shadow: 0 2px 6px rgba(227, 6, 19, 0.4);
+}
+
+.cornelsenBrandSubtitle {
+    color: rgba(255, 255, 255, 0.75) !important;
+    font-size: 0.75rem !important;
+    font-weight: 400 !important;
+}
+
+/* Side Navigation */
+.cornelsenSideNav {
+    background: #ffffff;
+    border-right: 1px solid #E8EDF2;
+    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.04);
+}
+
+.cornelsenSideNav .sapTntNavLIItemSelected {
+    background: var(--cornelsen-accent-light) !important;
+    border-left: 3px solid var(--cornelsen-primary) !important;
+}
+
+.cornelsenSideNav .sapTntNavLIItemSelected .sapTntNavLIGroup,
+.cornelsenSideNav .sapTntNavLIItemSelected .sapTntNavLIText {
+    color: var(--cornelsen-secondary) !important;
+    font-weight: 600 !important;
+}
+
+/* KPI Cards */
+.cornelsenKpiCard {
+    border-radius: var(--cornelsen-radius) !important;
+    box-shadow: var(--cornelsen-card-shadow) !important;
+    border: 1px solid #E8EDF2 !important;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    overflow: hidden;
+}
+
+.cornelsenKpiCard:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 51, 102, 0.12) !important;
+}
+
+.cornelsenKpiBlue .cornelsenKpiIconWrap { background: linear-gradient(135deg, #003366, #004d99); }
+.cornelsenKpiTeal .cornelsenKpiIconWrap { background: linear-gradient(135deg, #00A0B0, #00C4D4); }
+.cornelsenKpiOrange .cornelsenKpiIconWrap { background: linear-gradient(135deg, #E30613, #FF3344); }
+.cornelsenKpiGreen .cornelsenKpiIconWrap { background: linear-gradient(135deg, #2E7D32, #43A047); }
+
+.cornelsenKpiIconWrap {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cornelsenKpiIconWrap .sapUiIcon {
+    color: white !important;
+    font-size: 1.5rem !important;
+}
+
+.cornelsenKpiValue {
+    font-size: 2rem !important;
+    font-weight: 700 !important;
+    color: var(--cornelsen-secondary) !important;
+    line-height: 1.2 !important;
+}
+
+.cornelsenKpiTrend {
+    font-size: 0.8rem !important;
+    font-weight: 600 !important;
+}
+
+/* Content Cards */
+.cornelsenContentCard,
+.cornelsenContentCard.sapMPanel {
+    border-radius: var(--cornelsen-radius) !important;
+    box-shadow: var(--cornelsen-card-shadow) !important;
+    border: 1px solid #E8EDF2 !important;
+    background: #ffffff !important;
+}
+
+.cornelsenContentCard .sapFCardHeader {
+    border-bottom: 1px solid #F0F4F8;
+}
+
+/* Hero Section */
+.cornelsenHero {
+    background: linear-gradient(135deg, var(--cornelsen-secondary) 0%, #0055AA 50%, var(--cornelsen-accent) 100%);
+    border-radius: var(--cornelsen-radius);
+    padding: 2rem;
+    color: white;
+    margin-bottom: 1.5rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.cornelsenHero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -10%;
+    width: 300px;
+    height: 300px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 50%;
+}
+
+.cornelsenHero::after {
+    content: '';
+    position: absolute;
+    bottom: -30%;
+    left: 20%;
+    width: 200px;
+    height: 200px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 50%;
+}
+
+.cornelsenHeroTitle {
+    font-size: 1.75rem !important;
+    font-weight: 700 !important;
+    color: #ffffff !important;
+    position: relative;
+    z-index: 1;
+}
+
+.cornelsenHeroSubtitle {
+    font-size: 1rem !important;
+    color: rgba(255, 255, 255, 0.85) !important;
+    position: relative;
+    z-index: 1;
+}
+
+/* Object Page */
+.cornelsenObjectPage .sapUxAPObjectPageHeaderTitle {
+    font-size: 1.5rem !important;
+    font-weight: 700 !important;
+}
+
+.cornelsenAvatarLarge {
+    width: 96px !important;
+    height: 96px !important;
+    border: 4px solid #ffffff;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+}
+
+.cornelsenObjectHeader {
+    background: linear-gradient(180deg, #ffffff 0%, var(--cornelsen-surface) 100%);
+}
+
+.cornelsenHeaderFacet {
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 12px 16px;
+    border: 1px solid #E8EDF2;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+    min-width: 140px;
+}
+
+.cornelsenHeaderFacetLabel {
+    font-size: 0.75rem !important;
+    color: #6B7B8D !important;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.cornelsenHeaderFacetValue {
+    font-size: 1.1rem !important;
+    font-weight: 600 !important;
+    color: var(--cornelsen-secondary) !important;
+}
+
+/* Skill Bars */
+.cornelsenSkillBar {
+    height: 8px;
+    background: #E8EDF2;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-top: 4px;
+}
+
+.cornelsenSkillFill {
+    height: 100%;
+    border-radius: 4px;
+    background: linear-gradient(90deg, var(--cornelsen-accent), var(--cornelsen-secondary));
+    transition: width 0.6s ease;
+}
+
+/* Department Chart Bars */
+.cornelsenDeptBar {
+    height: 24px;
+    background: #E8EDF2;
+    border-radius: 6px;
+    overflow: hidden;
+    flex: 1;
+}
+
+.cornelsenDeptBarFill {
+    height: 100%;
+    border-radius: 6px;
+    background: linear-gradient(90deg, var(--cornelsen-primary), var(--cornelsen-accent));
+    transition: width 0.8s ease;
+}
+
+/* News Cards */
+.cornelsenNewsImage {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 8px 8px 0 0;
+}
+
+/* Worklist */
+.cornelsenWorklistTable .sapMListTblRow:hover {
+    background: var(--cornelsen-accent-light) !important;
+    cursor: pointer;
+}
+
+.cornelsenWorklistAvatar {
+    margin-right: 12px;
+}
+
+/* Timeline */
+.cornelsenTimeline .sapSuiteUiCommonsTimelineItem {
+    padding-bottom: 1rem;
+}
+
+/* Quick Action Buttons */
+.cornelsenQuickAction {
+    border-radius: 10px !important;
+    border: 1px solid #E8EDF2 !important;
+    transition: all 0.2s ease;
+}
+
+.cornelsenQuickAction:hover {
+    border-color: var(--cornelsen-accent) !important;
+    background: var(--cornelsen-accent-light) !important;
+}
+
+/* Status badges */
+.cornelsenStatusActive {
+    color: #2E7D32;
+    background: #E8F5E9;
+    padding: 2px 10px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+/* Page transitions */
+.cornelsenPageContent {
+    animation: fadeInUp 0.35s ease;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .cornelsenHero {
+        padding: 1.25rem;
+    }
+    .cornelsenHeroTitle {
+        font-size: 1.35rem !important;
+    }
+    .cornelsenKpiValue {
+        font-size: 1.5rem !important;
+    }
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #F0F4F8;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #C5CDD5;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #A0AAB4;
+}

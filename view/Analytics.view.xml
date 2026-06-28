@@ -1,0 +1,66 @@
+<mvc:View
+    controllerName="cornelsen.talent.portal.controller.Analytics"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:layout="sap.ui.layout">
+    <Page title="{i18n>analyticsTitle}" showNavButton="false" class="sapUiResponsiveContentPadding">
+        <content>
+            <Text text="{i18n>analyticsSubtitle}" class="sapUiSmallMarginBottom sapThemeLightText"/>
+
+            <layout:Grid defaultSpan="L3 M6 S12" class="sapUiMediumMarginBottom">
+                <layout:content>
+                    <Panel class="cornelsenKpiCard cornelsenKpiBlue">
+                        <content>
+                            <VBox class="sapUiSmallMargin" alignItems="Center">
+                                <core:Icon src="sap-icon://employee" size="2rem" color="#ffffff" class="sapUiSmallMarginBottom"/>
+                                <Text text="2.847" class="cornelsenKpiValue"/>
+                                <Text text="Gesamtmitarbeiter"/>
+                            </VBox>
+                        </content>
+                    </Panel>
+                    <Panel class="cornelsenKpiCard cornelsenKpiTeal">
+                        <content>
+                            <VBox class="sapUiSmallMargin" alignItems="Center">
+                                <core:Icon src="sap-icon://add-employee" size="2rem" color="#ffffff" class="sapUiSmallMarginBottom"/>
+                                <Text text="142" class="cornelsenKpiValue"/>
+                                <Text text="Einstellungen YTD"/>
+                            </VBox>
+                        </content>
+                    </Panel>
+                    <Panel class="cornelsenKpiCard cornelsenKpiOrange">
+                        <content>
+                            <VBox class="sapUiSmallMargin" alignItems="Center">
+                                <core:Icon src="sap-icon://away" size="2rem" color="#ffffff" class="sapUiSmallMarginBottom"/>
+                                <Text text="4.1%" class="cornelsenKpiValue"/>
+                                <Text text="Fluktuationsrate"/>
+                            </VBox>
+                        </content>
+                    </Panel>
+                    <Panel class="cornelsenKpiCard cornelsenKpiGreen">
+                        <content>
+                            <VBox class="sapUiSmallMargin" alignItems="Center">
+                                <core:Icon src="sap-icon://favorite" size="2rem" color="#ffffff" class="sapUiSmallMarginBottom"/>
+                                <Text text="4.6" class="cornelsenKpiValue"/>
+                                <Text text="Ø Zufriedenheit"/>
+                            </VBox>
+                        </content>
+                    </Panel>
+                </layout:content>
+            </layout:Grid>
+
+            <Title text="{i18n>analyticsDepartment}" level="H3" class="sapUiMediumMarginBottom"/>
+            <Panel class="cornelsenContentCard sapUiMediumMarginBottom">
+                <content>
+                    <VBox items="{dashboard>/DepartmentDistribution}" class="sapUiSmallMargin">
+                        <HBox alignItems="Center" class="sapUiSmallMarginBottom">
+                            <Text text="{dashboard>Department}" width="140px" class="sapUiTinyMarginEnd"/>
+                            <ProgressIndicator percentValue="{dashboard>Percentage}" displayValue="{dashboard>Count}" showValue="true" width="100%" class="sapUiTinyMarginEnd"/>
+                            <Text text="{dashboard>Percentage}%" width="45px" textAlign="End" class="sapThemeLightText"/>
+                        </HBox>
+                    </VBox>
+                </content>
+            </Panel>
+        </content>
+    </Page>
+</mvc:View>

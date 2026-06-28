@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cornelsen Talent Portal</title>
+    <style>
+        html, body, #content, [data-sap-ui-component] {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+    <script>
+        (function () {
+            var h = window.location.hostname;
+            var isGitHubPages = h.indexOf("github.io") !== -1;
+            var isLocalDev = h === "localhost" || h.indexOf("applicationstudio") !== -1;
+
+            var sUi5 = isLocalDev
+                ? "resources/sap-ui-core.js"
+                : "https://sdk.openui5.org/1.120.0/resources/sap-ui-core.js";
+            var sTheme = isLocalDev ? "base" : "sap_horizon";
+            var sRoot = isGitHubPages ? "/sap_berlin/" : "./";
+            var sLibs = isLocalDev
+                ? "sap.m,sap.ui.core,sap.ui.layout"
+                : "sap.m,sap.ui.core,sap.ui.layout,sap.uxap";
+
+            var oScript = document.createElement("script");
+            oScript.id = "sap-ui-bootstrap";
+            oScript.src = sUi5;
+            oScript.setAttribute("data-sap-ui-theme", sTheme);
+            oScript.setAttribute("data-sap-ui-libs", sLibs);
+            oScript.setAttribute("data-sap-ui-compatVersion", "edge");
+            oScript.setAttribute("data-sap-ui-async", "true");
+            oScript.setAttribute("data-sap-ui-resourceroots", JSON.stringify({
+                "cornelsen.talent.portal": sRoot
+            }));
+            oScript.setAttribute("data-sap-ui-oninit", "module:sap/ui/core/ComponentSupport");
+            oScript.setAttribute("data-sap-ui-frameOptions", "allow");
+            document.head.appendChild(oScript);
+        })();
+    </script>
+</head>
+<body class="sapUiBody" id="content">
+    <div
+        data-sap-ui-component
+        data-name="cornelsen.talent.portal"
+        data-id="container"
+        data-settings='{"id": "cornelsenTalentPortal"}'
+        style="height: 100%">
+    </div>
+</body>
+</html>

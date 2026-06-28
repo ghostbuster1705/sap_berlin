@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>UI5 Diagnose</title>
+    <style>body{font-family:Arial,sans-serif;padding:30px;max-width:700px} p{margin:8px 0}</style>
+    <script
+        id="sap-ui-bootstrap"
+        src="resources/sap-ui-core.js"
+        data-sap-ui-theme="base"
+        data-sap-ui-libs="sap.m,sap.ui.core"
+        data-sap-ui-compatVersion="edge"
+        data-sap-ui-async="true"
+        data-sap-ui-oninit="module:sap/ui/core/Core"
+        data-sap-ui-frameOptions="allow">
+    </script>
+</head>
+<body>
+    <h2>UI5 Diagnose v3.4</h2>
+    <div id="log"><p>⏳ Warte auf UI5...</p></div>
+    <script>
+        var log = document.getElementById("log");
+        function add(msg, ok) {
+            var p = document.createElement("p");
+            p.style.color = ok ? "green" : "red";
+            p.textContent = msg;
+            log.appendChild(p);
+        }
+        setTimeout(function () {
+            if (!window.sap) {
+                add("❌ UI5 nicht geladen nach 15s — npm run start:bas prüfen", false);
+            }
+        }, 15000);
+        sap.ui.getCore().attachInit(function () {
+            add("✅ UI5 Core initialisiert (Theme: base)", true);
+            sap.ui.require(["sap/m/Button"], function (Button) {
+                new Button({
+                    text: "UI5 funktioniert!",
+                    type: "Emphasized",
+                    press: function () { window.location.href = "index.html"; }
+                }).placeAt("log");
+                add("✅ sap.m geladen — alles OK!", true);
+                add("→ Klicken Sie den Button oder öffnen Sie index.html", true);
+            }, function (e) {
+                add("❌ sap.m Fehler: " + e, false);
+            });
+        });
+    </script>
+</body>
+</html>

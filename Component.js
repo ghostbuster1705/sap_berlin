@@ -1,0 +1,2 @@
+sap.ui.define(["sap/ui/core/UIComponent","cornelsen/talent/portal/model/models"],function(e,t){"use strict";return e.extend("cornelsen.talent.portal.Component",{metadata:{manifest:"json"},init:function(){e.prototype.init.apply(this,arguments);this.setModel(t.createDeviceModel(),"device");this.setModel(t.createAppModel(),"app");var n=this.getRouter();setTimeout(function(){n.initialize()},0)}})});
+//# sourceMappingURL=Component.js.map

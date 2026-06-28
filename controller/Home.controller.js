@@ -1,0 +1,2 @@
+sap.ui.define(["sap/ui/core/mvc/Controller","sap/ui/core/UIComponent","sap/m/MessageToast"],function(e,n,o){"use strict";return e.extend("cornelsen.talent.portal.controller.Home",{onNavWorklist:function(){this.getOwnerComponent().getRouter().navTo("worklist")},onNavAnalytics:function(){this.getOwnerComponent().getRouter().navTo("analytics")},onEmployeePress:function(){this.getOwnerComponent().getRouter().navTo("worklist")}})});
+//# sourceMappingURL=Home.controller.js.map

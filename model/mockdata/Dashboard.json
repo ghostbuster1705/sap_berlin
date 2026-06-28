@@ -1,0 +1,55 @@
+{
+    "KPIs": [
+        {
+            "title": "Gesamtmitarbeiter",
+            "value": "2.847",
+            "trend": "+3.2%",
+            "trendState": "Success",
+            "icon": "sap-icon://employee",
+            "color": "cornelsenKpiBlue"
+        },
+        {
+            "title": "Aktive Projekte",
+            "value": "47",
+            "trend": "+12",
+            "trendState": "Success",
+            "icon": "sap-icon://project-definition-triangle-2",
+            "color": "cornelsenKpiTeal"
+        },
+        {
+            "title": "Offene Stellen",
+            "value": "23",
+            "trend": "-5",
+            "trendState": "Success",
+            "icon": "sap-icon://add-employee",
+            "color": "cornelsenKpiOrange"
+        },
+        {
+            "title": "Fluktuation",
+            "value": "4.1%",
+            "trend": "-0.8%",
+            "trendState": "Success",
+            "icon": "sap-icon://trend-down",
+            "color": "cornelsenKpiGreen"
+        }
+    ],
+    "RecentHires": [
+        { "Name": "Laura Becker", "Department": "IT & Digital", "Date": "2026-06-01", "Avatar": "" },
+        { "Name": "Felix Hoffmann", "Department": "Sales", "Date": "2026-05-15", "Avatar": "" },
+        { "Name": "Nina Schulz", "Department": "Editorial", "Date": "2026-05-02", "Avatar": "" }
+    ],
+    "DepartmentDistribution": [
+        { "Department": "Editorial", "Count": 820, "Percentage": 29 },
+        { "Department": "Sales", "Count": 540, "Percentage": 19 },
+        { "Department": "IT & Digital", "Count": 380, "Percentage": 13 },
+        { "Department": "Digital Learning", "Count": 310, "Percentage": 11 },
+        { "Department": "Operations", "Count": 450, "Percentage": 16 },
+        { "Department": "Other", "Count": 347, "Percentage": 12 }
+    ],
+    "UpcomingEvents": [
+        { "Title": "Sommerfest Cornelsen", "Date": "2026-07-15", "Location": "Berlin HQ", "Type": "Event" },
+        { "Title": "SAP TechEd Watch Party", "Date": "2026-07-22", "Location": "Hamburg Office", "Type": "Training" },
+        { "Title": "Q3 Performance Reviews", "Date": "2026-08-01", "Location": "Alle Standorte", "Type": "HR" }
+    ],
+    "News": []
+}
