@@ -27,11 +27,16 @@ Open [http://localhost:8080/index.html](http://localhost:8080/index.html)
 
 ## Public URL (GitHub Pages)
 
-После включения Pages приложение доступно **откуда угодно**, без запущенного сервера:
+После настройки приложение доступно **откуда угодно**, без запущенного сервера:
 
 **https://ghostbuster1705.github.io/sap_berlin/**
 
-Один раз в репозитории: **Settings → Pages → Build and deployment → Source: GitHub Actions**.
+### Настройка (один раз)
+
+1. Дождитесь успешного workflow **Deploy to GitHub Pages** (ветка Actions).
+2. Откройте **Settings → Pages**.
+3. **Build and deployment → Source:** Deploy from a branch.
+4. **Branch:** `gh-pages` → папка `/ (root)` → Save.
 
 Деплой запускается автоматически при push в `main` или `cursor/sap-cornelsen-app-6777`.  
 Локально и в BAS по-прежнему используется `npm start` / `npm run start:bas`.
